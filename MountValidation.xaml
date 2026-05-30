@@ -1,0 +1,171 @@
+﻿<Window x:Class="WindowsCostumizeWizard.MountValidation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="{DynamicResource Text_Validation}"
+        Icon="pack://application:,,,/Resources/Images/settings.ico">
+
+    <Border Background="{DynamicResource GridGlobalMWBg}" Padding="5"
+            Width="Auto">
+        
+        <Grid Name="GridAll">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid Name="GridAB">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Padding="5" Margin="0,0,5,0" Width="400"
+                        Background="{DynamicResource GlobalBorderBackground0}"
+                        BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                        BorderThickness="1">
+
+                    <StackPanel>
+                        <StackPanel Orientation="Horizontal" Name="G1">
+                            <TextBlock Text="{Binding T1}" VerticalAlignment="Center"/>
+
+                            <TextBlock Text="Mount Dir :"
+                                   Foreground="{DynamicResource GlobalTitleForeground2}"
+                                   FontStyle="Italic" VerticalAlignment="Center"
+                                   Margin="5,0"/>
+
+                            <TextBlock Text="{Binding AddresDir}"
+                                   Foreground="{DynamicResource GlobalTitleForeground1}"
+                                   FontStyle="Italic" Grid.Column="1"
+                                   FontWeight="Bold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"  Name="G2" Grid.Row="1" Margin="0,5">
+                            <TextBlock Text="{Binding T2}" VerticalAlignment="Center"/>
+
+                            <TextBlock Text="Image File :"
+                                   Foreground="{DynamicResource GlobalTitleForeground2}"
+                                   FontStyle="Italic" VerticalAlignment="Center"
+                                   Margin="5,0"/>
+
+                            <TextBlock Text="{Binding AddressFile}"
+                                   Foreground="{DynamicResource GlobalTitleForeground1}"
+                                   FontStyle="Italic" Grid.Column="1"
+                                   FontWeight="Bold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Name="G3" Grid.Row="2">
+                            <TextBlock Text="{Binding T3}" VerticalAlignment="Center"/>
+
+                            <TextBlock Text="Image Index :"
+                                   Foreground="{DynamicResource GlobalTitleForeground2}"
+                                   FontStyle="Italic" VerticalAlignment="Center"
+                                   Margin="5,0"/>
+
+                            <TextBlock Text="{Binding NumberIndex}"
+                                   Foreground="{DynamicResource GlobalTitleForeground1}"
+                                   FontStyle="Italic" Grid.Column="1"
+                                   FontWeight="Bold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"  Name="G4" Grid.Row="3" Margin="0,5">
+                            <TextBlock Text="{Binding T4}" VerticalAlignment="Center"/>
+
+                            <TextBlock Text="Mounted Read/Write :"
+                                   Foreground="{DynamicResource GlobalTitleForeground2}"
+                                   FontStyle="Italic" VerticalAlignment="Center"
+                                   Margin="5,0"/>
+
+                            <TextBlock Text="{Binding MountedRW}"
+                                   Foreground="{DynamicResource GlobalTitleForeground1}"
+                                   FontStyle="Italic" Grid.Column="1"
+                                   FontWeight="Bold" VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal" Name="G5" Grid.Row="5">
+                            <TextBlock Text="{Binding T5}" VerticalAlignment="Center"/>
+
+                            <TextBlock Text="Status :"
+                                   Foreground="{DynamicResource GlobalTitleForeground2}"
+                                   FontStyle="Italic" VerticalAlignment="Center"
+                                   Margin="5,0"/>
+
+                            <TextBlock Text="{Binding StatusImage}"
+                                   Foreground="{DynamicResource GlobalTitleForeground1}"
+                                   FontStyle="Italic" Grid.Column="1"
+                                   FontWeight="Bold" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Padding="5"
+                        Background="{DynamicResource GlobalBorderBackground0}"
+                        BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                        BorderThickness="1">
+
+                    <StackPanel>
+                        <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="Визначити"
+                                Grid.Column="2" HorizontalAlignment="Right"
+                                Width="120"/>
+
+                        <Button x:Name="btnAudit"
+                                Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="Перевірити"
+                                Grid.Column="2" IsEnabled="False" HorizontalAlignment="Right"
+                                Width="120" Margin="0,5"/>
+
+                        <Button x:Name="btnRestore"
+                                Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="Відновити"
+                                Grid.Column="2" IsEnabled="False" HorizontalAlignment="Right"
+                                Width="120"/>
+                        
+                        <Button x:Name="btnCleanup"
+                                Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="Очистити"
+                                Grid.Column="2" IsEnabled="False" HorizontalAlignment="Right"
+                                Width="120" Margin="0,5"/>
+                        
+                        <Button x:Name="btnCleanupReg"
+                                Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="Очистити реєстр"
+                                Grid.Column="2" IsEnabled="False" HorizontalAlignment="Right"
+                                Width="120"/>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <Border Grid.Row="1" Padding="5" Margin="0,5"
+                    Background="{DynamicResource GlobalBorderBackground0}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                    BorderThickness="1">
+
+                <Border Name="StatusMount" Grid.Row="1"
+                        Background="{DynamicResource GlobalBorderBackground3}"
+                        BorderBrush="{DynamicResource GlobalBorderBrush3}"
+                        Padding="5" BorderThickness="1">
+
+                    <TextBox x:Name="txtStatusValidstion" Text="{Binding InfoOutput}" FontSize="10"
+                             Foreground="{DynamicResource GlobalTitleForeground3}"
+                             Background="Transparent"
+                             BorderThickness="0"
+                             IsReadOnly="False"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center" Height="100"/>
+                </Border>
+            </Border>
+
+            <Button x:Name="btnStartProgram" Style="{DynamicResource GlobalActionButtonStyle}"
+                    Content="Запустити програму"
+                    IsEnabled="False" Width="Auto" Grid.Row="2"/>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="WindowsCostumizeWizard.WindowInfo.WindowLocationInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.WindowInfo"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" ResizeMode="NoResize" ShowInTaskbar="True"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner"
+        Icon="Resources/select.ico">
+
+    <Border Background="{DynamicResource WI_BorderBackground}"
+            BorderBrush="{DynamicResource WI_BorderBrush}"
+            Opacity="0.9" CornerRadius="10"
+            BorderThickness="1"
+            Padding="10" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{DynamicResource Text_TitleInfoWindowInfo}"
+                       Foreground="{DynamicResource GlobalTitleForeground0}"
+                       Margin="0,0,5,0" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+
+                <Image Source="/Resources/Images/wcwfolder.png" Stretch="Uniform" Margin="0,0,10,0"/>
+
+                <TextBlock Text="{Binding InfoText}"
+                           Foreground="{DynamicResource GlobalTitleForeground1}"
+                           Margin="5" VerticalAlignment="Center"
+                           TextWrapping="Wrap" HorizontalAlignment="Center"
+                           FontWeight="Bold"/>
+            </StackPanel>
+
+            <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                    Content="Вибрати" 
+                    Width="Auto" Grid.Row="2" Click="Ok_Click"/>
+        </Grid>
+    </Border>
+</Window>

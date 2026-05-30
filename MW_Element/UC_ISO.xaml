@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="WindowsCostumizeWizard.MW_Element.UC_ISO"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:WindowsCostumizeWizard"
+            xmlns:UnEx="clr-namespace:WindowsCostumizeWizard.MW_Element"
+            mc:Ignorable="d">
+
+    <Border Name="GlobalBorder" Height="Auto" Width="365">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Border Name="TitleISO" Padding="5"
+                    Background="{DynamicResource GlobalBorderBackground2}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                    Width="Auto" Height="Auto" Margin="5,5,2.5,5" BorderThickness="1">
+
+                <TextBlock Name="TextTISO" Text="{DynamicResource Text_ISOImage}"
+                           Foreground="{DynamicResource GlobalTitleForeground0}"
+                           FontWeight="Bold" HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+            </Border>
+
+            <Border Name="PerformISO"
+                    Background="{DynamicResource GlobalBorderBackground0}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                    Grid.Row="1" Width="Auto" Height="Auto"
+                    Margin="5,0,2.5,5" Padding="5" BorderThickness="1">
+
+                <Grid Name="GlobalAll">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <Button x:Name="btnOpenIso" Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="{DynamicResource Content_OpenISO}"
+                                Click="Click_OpenISOFile" Grid.Row="1"/>
+
+                        <Button x:Name="btnUnmountISO" Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="{DynamicResource Content_DismountISO}"
+                                Grid.Row="2" Margin="0,5" IsEnabled="False"
+                                Click="Click_UnmountISO"/>
+                    </StackPanel>
+
+                    <Grid Name="ColumnLR" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Name="GridLeft" Margin="0,0,2.5,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Name="ExA"
+                                    Background="{DynamicResource GlobalBorderBackground1}"
+                                    BorderBrush="{DynamicResource GlobalBorderBrush1}"
+                                    Height="204" BorderThickness="1">
+
+                                <UnEx:UC_UniversalExplorer x:Name="ExplorerA" Grid.Row="2" IsEnabled="False" Opacity="0.1"/>
+                            </Border>
+
+                            <Button x:Name="btnOpenMountDisk" IsEnabled="False"
+                                    Style="{DynamicResource GlobalActionButtonStyle}"
+                                    Content="{DynamicResource Content_OpenFolderIsoDisk}" Grid.Row="1"
+                                    Click="Click_OpenMountDisk" Margin="0,5"/>
+                        </Grid>
+
+                        <Grid Name="GridRight" Margin="2.5,0,0,0" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Border Name="ExB"
+                                    Background="{DynamicResource GlobalBorderBackground1}"
+                                    BorderBrush="{DynamicResource GlobalBorderBrush1}"
+                                    Height="204" BorderThickness="1">
+
+                                <UnEx:UC_UniversalExplorer x:Name="ExplorerB" Grid.Row="2" IsEnabled="False" Opacity="0.1"/>
+                            </Border>
+
+                            <Button Name="btnOpenIsoCopy" IsEnabled="False"
+                                    Style="{DynamicResource GlobalActionButtonStyle}"
+                                    Content="{DynamicResource Content_OpenFolderIsoCopy}" Grid.Row="1"
+                                    Click="Click_OpenCopyIso" Margin="0,5"/>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button x:Name="btnCopyISO" Style="{DynamicResource GlobalActionButtonStyle}"
+                                Content="{DynamicResource Content_Copy}"
+                                IsEnabled="False" Margin="0,0,2.5,0"
+                                Click="Click_CopyImageISO"/>
+
+                        <Button x:Name="btnDeleteIsoCopy" Style="{DynamicResource GlobalActionButtonStyle}" IsEnabled="False"
+                                Content="{DynamicResource Content_Delete}" Grid.Column="1" 
+                                Click="Click_DeleteImageISO" Margin="2.5,0,0,0"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

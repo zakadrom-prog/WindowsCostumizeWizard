@@ -1,0 +1,176 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Window Info -->
+    <SolidColorBrush x:Key="WI_BorderBackground" Color="White" Opacity="0.9"/>
+    <SolidColorBrush x:Key="WI_BorderBrush" Color="Black"/>
+    <BitmapImage x:Key="AppIcon" UriSource="/Resources/app_l.png"/>
+
+    <!-- Global MainWindow Grid -->
+    <SolidColorBrush x:Key="GridGlobalMWBg" Color="#999"/>
+
+    <!-- Основний фон бордера TitleISO -->
+    <SolidColorBrush x:Key="GlobalBorderBackground0" Color="#FFC0CFD2"/>
+    <SolidColorBrush x:Key="GlobalBorderBackground1" Color="White"/>
+    <SolidColorBrush x:Key="GlobalBorderBackground2" Color="#FFACBDAC"/>
+    <SolidColorBrush x:Key="GlobalBorderBackground3" Color="#2111"/>
+    <SolidColorBrush x:Key="GlobalBorderBackground4" Color="#FFDAE9E8"/>
+    <SolidColorBrush x:Key="GlobalBorderBackground5" Color="#FFD8F7C4"/>
+    <SolidColorBrush x:Key="GlobalBorderBackground6" Color="#FFDAE9E8"/>
+    <SolidColorBrush x:Key="GlobalConsoleColor" Color="#FF3E4744"/>
+    <!-- Градієнт -->
+    <LinearGradientBrush x:Key="MainBorderGradient" StartPoint="0.2,0" EndPoint="0.2,1">
+        <GradientStop Color="LightGray" Offset="0"/>
+        <GradientStop Color="White" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="GlobalBorderBrush0" Color="DarkOliveGreen"/>
+    <SolidColorBrush x:Key="GlobalBorderBrush1" Color="DarkGray"/>
+    <SolidColorBrush x:Key="GlobalBorderBrush3" Color="DarkGray"/>
+
+    <SolidColorBrush x:Key="GlobalTitleForeground0" Color="Black"/>
+    <SolidColorBrush x:Key="GlobalTitleForeground1" Color="#124578"/>
+    <SolidColorBrush x:Key="GlobalTitleForeground2" Color="Black"/>
+    <SolidColorBrush x:Key="GlobalTitleForeground3" Color="Black"/>
+    <SolidColorBrush x:Key="GlobalTitleForeground4" Color="Blue"/>
+    <SolidColorBrush x:Key="GlobalTitleForeground5" Color="#FF557BAA"/>
+    <SolidColorBrush x:Key="Separator" Color="Black"/>
+    <SolidColorBrush x:Key="ColorProgres" Color="Black"/>
+
+    <SolidColorBrush x:Key="JurnalBackground0" Color="#FFAFDADF"/>
+    <SolidColorBrush x:Key="JurnalBackground1" Color="#FFBDE0F7"/>
+
+    <!-- Кнопки -->
+    <Style x:Key="MButtonL" TargetType="Button">
+
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="MinWidth" Value="50"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="DarkOliveGreen"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#4444"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border"
+                                            Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFE6F4F4"/>
+                                        <GradientStop Color="#777" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="RenderTransform">
+                                <Setter.Value>
+                                    <TranslateTransform Y="1"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border"
+                                            Property="Opacity"
+                                            Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="GlobalActionButtonStyle" TargetType="Button" BasedOn="{StaticResource MButtonL}"/>
+    <!-- End -->
+
+    <!-- Кнопки -->
+    <Style x:Key="MButtonLC" TargetType="Button">
+
+        <Setter Property="Height" Value="20"/>
+        <Setter Property="MinWidth" Value="20"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="DarkOliveGreen"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="Cursor" Value="Hand"/>
+
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FFA8A8A8"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="border"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border"
+                                            Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#FFBCF2F2"/>
+                                        <GradientStop Color="#FFE6F4F4" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="border" Property="RenderTransform">
+                                <Setter.Value>
+                                    <TranslateTransform Y="1"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="border"
+                                            Property="Opacity"
+                                            Value="0.5"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="GlobalActionButtonStyleC" TargetType="Button" BasedOn="{StaticResource MButtonLC}"/>
+    <!-- End -->
+</ResourceDictionary>

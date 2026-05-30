@@ -1,0 +1,327 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Start MainWindow -->
+    <sys:String x:Key="Link_SiteProject">Сторінка проекту</sys:String>
+    <sys:String x:Key="Link_UpdateProgram">Оновити програму</sys:String>
+    <sys:String x:Key="Text_YesIUP">Доступна нова версія</sys:String>
+    <sys:String x:Key="Text_NoIUP">Оновлення не потрібне</sys:String>
+    <sys:String x:Key="txt_NewUpdate">Доступне оновлення. Версія:</sys:String>
+    <sys:String x:Key="txt_NoUpdate">Оновлення не потрібне</sys:String>
+    <sys:String x:Key="txt_NoJson">Файл update.json не знайдено"</sys:String>
+    <sys:String x:Key="txt_NoJsonRead">Помилка читання update.json</sys:String>
+    <sys:String x:Key="Cont_CloseUpdate">Закрити</sys:String>
+
+    <sys:String x:Key="Content_UpdateInfoClose">Закрити</sys:String>
+    <sys:String x:Key="Text_UpdateShow">Більше не показувати</sys:String>
+    <sys:String x:Key="Text_UpdateA">Доступна нова версія програми</sys:String>
+    <sys:String x:Key="Text_Validation">Перевірка та відновлення образу</sys:String>
+    <sys:String x:Key="Content_FProg">📁 WCW тека</sys:String>
+    <sys:String x:Key="Content_Sett">⚙ Налаштування</sys:String>
+    <sys:String x:Key="Content_Help">❓ Довідка</sys:String>
+    <sys:String x:Key="Content_About">ℹ Про програму</sys:String>
+    <sys:String x:Key="Content_CloseProgram">❌ Закрити</sys:String>
+    <sys:String x:Key="Content_OpenProgram">▶️ Продовжити</sys:String>
+    <sys:String x:Key="Content_ImageCheck">🛠️ Ремонт</sys:String>
+    <sys:String x:Key="Text_FolderWimWindow">Папка MountWIM не порожня.\nРобота програми буде припинена.</sys:String>
+    <sys:String x:Key="Text_TitleInfoWindowAttention">УВАГА!</sys:String>
+    <sys:String x:Key="Text_StartInfoFolder">Для монтування та копіювання образів\nпотрібно від 35 ГБ вільного місця!\n\nTo mount and copy images\nyou need at least 35 GB of free space!</sys:String>
+    <!-- End -->
+
+    <!-- About Help -->
+    <sys:String x:Key="Text_TitleAbout">Про рограму</sys:String>
+    <sys:String x:Key="Text_About">Текст програми</sys:String>
+    <sys:String x:Key="Text_TitleHelp">Довідка</sys:String>
+    <sys:String x:Key="Text_Help">Текст довідки</sys:String>
+
+    <sys:String x:Key="Text_Version">Версія програми:</sys:String>
+    <sys:String x:Key="Text_UpdateStatus">Автоматичне оновлення програми</sys:String>
+    <sys:String x:Key="Content_btnOn">✔ Увімкнуто</sys:String>
+    <sys:String x:Key="Content_btnOff">❌ Вимкнуто</sys:String>
+
+    <!-- End -->
+
+    <!-- SettingsWCW -->
+    <sys:String x:Key="Settings0">Мова:</sys:String>
+    <sys:String x:Key="Settings1">Тема:</sys:String>
+    <sys:String x:Key="Settings2">Розмір:</sys:String>
+    <sys:String x:Key="SettingsLanguageNone">(немає)</sys:String>
+    <sys:String x:Key="SettingsLanguageUA">Українська</sys:String>
+    <sys:String x:Key="SettingsLanguageEN">Англійська</sys:String>
+    <sys:String x:Key="SettingsThemesNone">(не вибрано)</sys:String>
+    <sys:String x:Key="SettingsThemesDark">Темна</sys:String>
+    <sys:String x:Key="SettingsThemeslight">Світла</sys:String>
+    <!-- End -->
+
+    <!-- MainWindow -->
+    <sys:String x:Key="AppTitle">Майстер костюмів Windows Beta</sys:String>
+    <sys:String x:Key="SettingsTitle">Налаштування</sys:String>
+    <!-- End -->
+
+    <!-- UC_ISO -->
+    <sys:String x:Key="Content_OpenFolderIsoDisk">📂 Диск .iso</sys:String>
+    <sys:String x:Key="Content_OpenFolderIsoCopy">📂 Копія .iso</sys:String>
+    <sys:String x:Key="Text_ISOImage">Образ ISO</sys:String>
+    <sys:String x:Key="Text_BlockUnmount">ДЕМОНТАЖ ISO...</sys:String>
+    <sys:String x:Key="Text_BlockMount">МОНТАЖ ISO...</sys:String>
+    <sys:String x:Key="Text_WimNotFoundMessage">Файл install.wim / install.esd не знайдено.\nОбраз розпаковано частково або має нестандартну структуру.</sys:String>
+    <sys:String x:Key="Text_WimNotFoundTitle">УВАГА</sys:String>
+    <sys:String x:Key="Text_DetectESD">Виявлено образ install.esd.\nПотрібна конвертація</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_OpenISO">🎯 Вибрати образ windows.iso</sys:String>
+    <sys:String x:Key="Content_DismountISO">⏏️ Демонтувати образ .iso</sys:String>
+    <sys:String x:Key="Text_ISODisk">Образ ISO</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_Copy">📄 Копіювати</sys:String>
+    <sys:String x:Key="Content_Delete">🗑️ Видалити</sys:String>
+    <!-- End -->
+
+    <!-- UC_DeleteIndex -->
+    <sys:String x:Key="Text_EditIndex">Обробник редакцій</sys:String>
+    <sys:String x:Key="Text_EditIndexStatus">Статус редакцій</sys:String>
+    <sys:String x:Key="Text_Index">Редакції:</sys:String>
+    <sys:String x:Key="Content_InfoWim">ℹ install.wim/esd</sys:String>
+    <sys:String x:Key="Content_InfoWimDetail">ℹ Деталі редакції</sys:String>
+    <sys:String x:Key="Text_InfoDetail">Деталі</sys:String>
+    <sys:String x:Key="Text_TitleImage">Образ:</sys:String>
+    <sys:String x:Key="Text_TitleImageWimInfo">Деталі образу install</sys:String>
+    <sys:String x:Key="Content_CleanListIndex">🧹 Очистити деталі</sys:String>
+    <sys:String x:Key="Text_WLStatus">Статус Wimlib</sys:String>
+    <sys:String x:Key="Text_DICStatus0">Wimlib присутня</sys:String>
+    <sys:String x:Key="Text_StatusOptimize0">Оптимізація:</sys:String>
+    <sys:String x:Key="Text_StatusOptimize1">(не виконано)</sys:String>
+    <sys:String x:Key="Text_NoImage">(немає образу)</sys:String>
+    <sys:String x:Key="Text_LoadErrorIndex">Помилка при завантаженні індексів WIM:</sys:String>
+    <sys:String x:Key="Text_NoDeleteIndex">Видалення неможливе — залишилася лише одна редакція.</sys:String>
+    <sys:String x:Key="Text_NoSelectIndex">Оберіть редакцію для видалення.</sys:String>
+    <sys:String x:Key="Text_ErrorDeleteIndex">Помилка видалення редакції:</sys:String>
+    <sys:String x:Key="Text_ErrorWimlibInfo">Файл або wimlib не знайдено!</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_IndexUpdate">♻️ Оновити</sys:String>
+    <sys:String x:Key="Content_ConvertWIM">🔀 Конвертувати</sys:String>
+    <sys:String x:Key="Content_DeleteIndex">🗑️</sys:String>
+    <sys:String x:Key="Content_Opz">🚀 Оптимізувати *wimlib</sys:String>
+    <!-- End -->
+
+    <!-- UC_WIM -->
+    <sys:String x:Key="Content_OpenFolderMountWim">📂</sys:String>
+    <sys:String x:Key="Text_TitleWIM">Образ WIM</sys:String>
+    <sys:String x:Key="Text_WINIndex">Редакції:</sys:String>
+    <sys:String x:Key="Text_Optimize">Оптимізація .wim</sys:String>
+    <sys:String x:Key="Text_EndInfo0">Монтування завершено</sys:String>
+    <sys:String x:Key="Text_EndInfo1">Результат</sys:String>
+    <sys:String x:Key="Content_EndCloseInfo">❌ Закрити</sys:String>
+    <sys:String x:Key="Text_UnmountCommit">✔ Демонтовано(збережено)</sys:String>
+    <sys:String x:Key="Text_UnmountDiscard">⛔ Демонтовано(не збережешо)</sys:String>
+    <sys:String x:Key="Text_СComplete">Очищення завершено</sys:String>
+    <sys:String x:Key="Text_CFailed">Очищення не вдалося</sys:String>
+    <sys:String x:Key="Content_CreateIso">🛠️ Створити образ iso *oscdimg</sys:String>
+    <sys:String x:Key="Content_InfoOscdimg">ℹ oscdimg</sys:String>
+    <sys:String x:Key="Text_ErrorMountWIM">Шлях MountWIM не встановлений або не існує.</sys:String>
+    
+    <sys:String x:Key="Text_TitleCII">Створити iso</sys:String>
+    <sys:String x:Key="Text_TitleInfoISOStart">Тека образу:</sys:String>
+    <sys:String x:Key="Text_TitleInfoISOEnd">Тека ISO:</sys:String>
+    <sys:String x:Key="Content_CreateII">✨ Створити</sys:String>
+
+    <!-- Mount Wim -->
+    <sys:String x:Key="Text_NoMountWim">(не змонтовано)</sys:String>
+    <sys:String x:Key="Text_BlockMountWim">МОНТУВАННЯ WIM...</sys:String>
+    <sys:String x:Key="Text_BlockUnmountWim">ДЕМОНТУВАННЯ WIM...</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_MountIndex">📀 Монтувати</sys:String>
+    <sys:String x:Key="Content_UnmountDiscard">❌ Скасувати</sys:String>
+    <sys:String x:Key="Content_UnmountCommit">💾 Зберегти</sys:String>
+    <sys:String x:Key="Content_CleanupMountWim">🧹 Очистити образ</sys:String>
+    <sys:String x:Key="Content_IntegrityWim">🛡️ Цілісність образу</sys:String>
+    <!-- End -->
+
+    <!-- UC_Advanse -->
+    <sys:String x:Key="Text_TitleUtil">Додатково</sys:String>
+    <sys:String x:Key="Text_DriversBackup">Резервне копіювання драйверів</sys:String>
+    <sys:String x:Key="Content_UButton2">📦 Зібрати</sys:String>
+    <sys:String x:Key="Content_UButton3">➕ Додати драйвери до системи</sys:String>
+    <sys:String x:Key="Content_UButton5">➕ Додати драйвери до образу</sys:String>
+    <sys:String x:Key="Content_UButton4">➕ Додати/Видалити програми</sys:String>
+    <sys:String x:Key="Content_UButton6">✨ Створити образ системи *wimlib</sys:String>
+    <sys:String x:Key="Text_DriversNoInfo">(немає)</sys:String>
+    <sys:String x:Key="Text_SelectFolderCreateWim">📂 Вибрати</sys:String>
+    <sys:String x:Key="Text_SelFolderCreateWIM">Вибрати місце для створення instsll.wim</sys:String>
+    <sys:String x:Key="Text_Warning">❗Під час створення образу, не можна робити змінив в системі.❗</sys:String>
+    <sys:String x:Key="Text_DRH">🛠️ Виправити образ системи</sys:String>
+    <sys:String x:Key="Text_DCI">🧹 Очистити систему</sys:String>
+    <!-- End -->
+
+    <!-- Window Scan -->
+    <sys:String x:Key="RB_Scan0">Швидка перевірка</sys:String>
+    <sys:String x:Key="RB_Scan1">Повна перевірка (займає тривалий час)</sys:String>
+    <sys:String x:Key="Content_Scan">Старт</sys:String>
+    <sys:String x:Key="Text_Cleanup">Очищення компонентів...</sys:String>
+    <sys:String x:Key="Text_TitleCleanup">Перевірка цілісності</sys:String>
+    <!-- End -->
+
+    <!--  MainWindow Features -->
+    <sys:String x:Key="Content_MWButton0">Локальна система</sys:String>
+    <sys:String x:Key="Content_MWButton1">Змонтований образ</sys:String>
+    <sys:String x:Key="Content_MWButton2">Компоненти</sys:String>
+    <sys:String x:Key="Content_MWButton3">Пакети</sys:String>
+    <sys:String x:Key="Content_MWButton4">Програми</sys:String>
+    <sys:String x:Key="Text_FeaturesEnabled">Ввімкнено:</sys:String>
+    <sys:String x:Key="Text_FeaturesDisabled">Вимкнено:</sys:String>
+    <sys:String x:Key="Text_FeaturesOther">Інші:</sys:String>
+    <sys:String x:Key="Text_FeaturesAll">Всі:</sys:String>
+    <sys:String x:Key="Content_FeaturesButton0">♻️ Оновити</sys:String>
+    <sys:String x:Key="Content_FeaturesButton1">✖ Вимкнути</sys:String>
+    <sys:String x:Key="Content_FeaturesButton2">✔ Ввімкнути</sys:String>
+
+    <!-- Load Features -->
+    <sys:String x:Key="Text_BlockLoadFeatures">ЗАВАНТАЖЕННЯ КОМПОНЕНТІВ...</sys:String>
+    <sys:String x:Key="Text_BlockLoadPackages">ЗАВАНТАЖЕННЯ ПАКЕТІВ...</sys:String>
+    <sys:String x:Key="Text_BlockLoadAppx">ЗАВАНТАЖЕННЯ APPX...</sys:String>
+    <!-- End -->
+
+    <!-- Packages/Appx -->
+    <sys:String x:Key="Text_TextAll">Всі:</sys:String>
+    <sys:String x:Key="Content_PA_Button0">♻️ Оновити</sys:String>
+    <sys:String x:Key="Content_PA_Button1">🗑️ Видалити</sys:String>
+    <sys:String x:Key="Content_SelectAll">Вибрати всі</sys:String>
+    <sys:String x:Key="Text_ErrorLoadListFeatures">Помилка при отриманні списку компонентів.</sys:String>
+    <sys:String x:Key="Text_ErrorLoadListTree">Помилка при завантаженні дерева.</sys:String>
+    <sys:String x:Key="Text_RestartPC">ПОТРІБНО ПЕРЕЗАВАНТАЖИТИ ПК!</sys:String>
+    <sys:String x:Key="Content_ShowName">Показати повну назву</sys:String>
+    <sys:String x:Key="Text_LoadErrorOnlinePackages">Помилка завантаження Локальних пакетів.</sys:String>
+    <sys:String x:Key="Text_LoadErrorOnlineAppx">Помилка завантаження Локальних Appx.</sys:String>
+
+
+    <!-- Window NetFx3-->
+    <sys:String x:Key="Text_SelectFxMethodS">Звичайне вмикання через dism. Потрібна мережа.</sys:String>
+    <sys:String x:Key="Text_SelectFxMethodM">Через dism з вибором cab. Офлайн режим.</sys:String>
+    <sys:String x:Key="Text_TitleNetFX">Cпосіб вмикання NetFx3</sys:String>
+    <sys:String x:Key="Text_btnS">Стандартний</sys:String>
+    <sys:String x:Key="Text_btnM">Ручний</sys:String>
+    <sys:String x:Key="Content_btnS">Стандартний</sys:String>
+    <sys:String x:Key="Content_btnM">Ручний</sys:String>
+
+    <sys:String x:Key="Text_InfoSelectFile">Файл cab повинен відповідати образу системи в sources\sxs iso образу!</sys:String>
+    <sys:String x:Key="Text_NoSelect">(не вибрано)</sys:String>
+    <sys:String x:Key="Content_SelectFileCab">📂 Вибрати</sys:String>
+    <sys:String x:Key="Content_InsallFileCab">➕ Додати</sys:String>
+    <sys:String x:Key="Content_CloseWindow">❌ Закрити</sys:String>
+    <!-- End -->
+
+    <!-- Block Window Progres -->
+    <sys:String x:Key="Text_MountedBlock">Монтування образу</sys:String>
+    <sys:String x:Key="Text_BlockGetDrivers">РЕЗРВНЕ КОПІЮВАННЯ ДРАЙВЕРІВ...</sys:String>
+    <!-- End -->
+
+    <!-- ConverterTitle -->
+    <sys:String x:Key="ConverterTitle">Конвертер</sys:String>
+    <sys:String x:Key="Text_ErrorConvertImage">Конвертація не вдалася!</sys:String>
+    <sys:String x:Key="Text_ErrorStartProces">Помилка запуску процесу:</sys:String>
+    <sys:String x:Key="Text_StatusImageInstall0">Образ install.wim</sys:String>
+    <sys:String x:Key="Text_StatusImageInstall1">Образ install.esd</sys:String>
+    <sys:String x:Key="Text_ConvertEsd">Конвертувати > esd</sys:String>
+    <sys:String x:Key="Text_ConvertWim">Конвертувати > wim</sys:String>
+    <sys:String x:Key="Text_NoInstall">install.wim/install.esd не знайдено</sys:String>
+    <sys:String x:Key="Text_StatusProgress">(не виконано)</sys:String>
+    <!-- End -->
+
+    <!-- MessageINFO -->
+    <sys:String x:Key="Text_ErrorMountISO">Не вдалося змонтувати ISO.</sys:String>
+    <sys:String x:Key="Text_ErrorCopyISO">Копіювання не завершено.</sys:String>
+    <sys:String x:Key="Text_ErrorCopy">Помилка копіювання.</sys:String>
+    <sys:String x:Key="Text_ErrorTitle">Помилка</sys:String>
+    <!-- End -->
+
+    <!-- all Window program info -->
+    <sys:String x:Key="Text_TitleInfoWindowInfo">ІНФОРМАЦІЯ</sys:String>
+    <sys:String x:Key="Text_TitleInfoWindowInfoError">ПОМИЛКА</sys:String>
+    <sys:String x:Key="Text_AllInfo">Додавання "wimlib" відкриє додаткові функції програми.\n"wimlib" Завантажити додати в корінь програми в каталог.\n</sys:String>
+    <sys:String x:Key="Text_AllInfoOscdimg">Додавання "oscdimg" відкриє додаткові функції програми.\n"oscdimg" Завантажити Windows ADK "Deployment tools",\nабо додати "oscdimg.exe" в корінь програми в каталог.</sys:String>
+    <sys:String x:Key="Text_InfoTitleInfo">Інформація</sys:String>
+    <!-- End -->
+
+    <!-- Admin -->
+    <sys:String x:Key="Text_Administration">Програма запущена з правами адміністратора.\n\nThe program is running with administrator rights.</sys:String>
+    <sys:String x:Key="Text_NoAdministration">Програма запущена без прав адміністратора\nДеякі функції можуть бути обмежені.</sys:String>
+    <!-- end -->
+
+    <!-- netfx3 -->
+    <sys:String x:Key="Text_SelectCab">Виберіть CAB файл NetFx3</sys:String>
+    <!-- End -->
+
+    <!-- Add drivers -->
+    <sys:String x:Key="Text_NoInf">INF не знайдено.</sys:String>
+    <sys:String x:Key="Text_BlockAddDrivers">ДОДАВАННЯ ДРАЙВЕРІВ...</sys:String>
+    <sys:String x:Key="Content_SelectFolderDrivers">📂 Вибрати</sys:String>
+    <sys:String x:Key="Content_AddDrivers">➕ Додати</sys:String>
+    <!-- END -->
+
+    <!-- About -->
+    <sys:String x:Key="Text_AboutProgram">
+        Майстер костюмів Windows Бета\n
+        \n
+        Майстер костюмів Windows — це утиліта для роботи з образами Windows\n
+        та обслуговування локального середовища операційної системи.\n
+        \n
+        Програма дозволяє монтувати та обробляти WIM/ESD-образи,\n
+        керувати компонентами Windows, функціями, Appx-пакетами,\n
+        драйверами, а також виконувати очищення та оптимізацію системи.\n
+        \n
+        Основні можливості:\n
+        • Робота з WIM/ESD-образами\n
+        • Обслуговування локальної системи\n
+        • Керування компонентами та функціями Windows\n
+        • Керування Appx-пакетами\n
+        • Збір та інтеграція драйверів\n
+        • Очищення та перевірка цілісності образів\n
+        • Інструменти обробки на базі DISM\n
+        \n
+        Програма призначена для досвідчених користувачів,\n
+        тестувальників, системних адміністраторів\n
+        та ентузіастів кастомізації Windows.\n
+        \n
+        Розробник: ZaKadrom\n
+        © 2026 ZaKadrom
+    </sys:String>
+    <!-- End -->
+
+    <!-- Help -->
+    <sys:String x:Key="Text_HelpProgram">
+        Майстер костюмів Windows довідка\n
+        \n
+        Швидкий старт:\n
+        \n
+        1. Виберіть ISO-образ Windows.\n
+        2. Змонтуйте потрібний WIM/ESD-індекс.\n
+        3. Відкрийте розділи Features, Packages або Appx.\n
+        4. Увімкніть, вимкніть або видаліть компоненти.\n
+        5. Збережіть зміни змонтованого образу.\n
+        6. Після завершення демонтуйте образ.\n
+        \n
+        Доступні інструменти:\n
+        • Монтування та демонтування образів Windows\n
+        • Обслуговування локальної системи\n
+        • Керування компонентами Windows\n
+        • Керування Appx-пакетами\n
+        • Експорт та інтеграція драйверів\n
+        • Очищення та оптимізація образів\n
+        • Перевірка цілісності образів\n
+        • Конвертація WIM та ESD\n
+        \n
+        Важливо:\n
+        • Запускайте програму від імені адміністратора.\n
+        • Не закривайте програму під час обробки образу.\n
+        • Великі образи можуть потребувати багато місця на диску.\n
+        • Операції DISM можуть виконуватись тривалий час.\n
+        \n
+        Розробник: ZaKadrom\n
+        © 2026 ZaKadrom
+    </sys:String>
+    <!-- End -->
+</ResourceDictionary>

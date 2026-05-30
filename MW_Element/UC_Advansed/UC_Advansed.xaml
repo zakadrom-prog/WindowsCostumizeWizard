@@ -1,0 +1,97 @@
+﻿<UserControl x:Class="WindowsCostumizeWizard.MW_Element.UC_Advansed.UC_Advansed"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+            xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:WindowsCostumizeWizard"
+            mc:Ignorable="d">
+
+    <Grid Margin="2.5,0,2.5,0" Width="300">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Name="TitleUtilite" Padding="5"
+                Width="Auto" Height="Auto"
+                Background="{DynamicResource GlobalBorderBackground2}"
+                BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                BorderThickness="1">
+
+            <TextBlock Text="{DynamicResource Text_TitleUtil}"
+                       Foreground="{DynamicResource GlobalTitleForeground0}"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Border>
+
+        <Border Name="BorderProc1" Padding="5" Height="Auto"
+                Background="{DynamicResource GlobalBorderBackground0}"
+                BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                Grid.Row="1" BorderThickness="1" Margin="0,5">
+
+            <StackPanel>
+                <TextBlock Text="{DynamicResource Text_DriversBackup}"
+                           Foreground="{DynamicResource GlobalTitleForeground1}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+
+                <Grid Margin="0,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                            Content="{DynamicResource Content_UButton2}"                    
+                            Margin="0,0,5,0"
+                            Click="GetDrivers_Click"/>
+
+                    <Border Background="{DynamicResource GlobalBorderBackground4}"
+                            BorderBrush="{DynamicResource GlobalBorderBrush1}"
+                            Padding="5" BorderThickness="1" Grid.Column="1" Height="25">
+
+                        <TextBlock x:Name="ProgressDriversText"
+                                   Foreground="{DynamicResource GlobalTitleForeground1}"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </Grid>
+            </StackPanel>
+        </Border>
+
+        <Border Name="BorderProc2" Padding="5" Height="Auto"
+                Background="{DynamicResource GlobalBorderBackground0}"
+                BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                Grid.Row="2" BorderThickness="1">
+            
+            <StackPanel>
+                <Button x:Name="btnADI"
+                        Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Content_UButton5}"
+                        IsEnabled="False"
+                        Click="AddDriversImage_Click"/>
+
+                <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Content_UButton3}" 
+                        Margin="0,5"
+                        Click="AddDriversSystem_Click"/>
+
+                <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Text_DRH}"
+                        Click="DISMRestoreHealth_Click"/>
+
+                <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Text_DCI}"
+                        Margin="0,5"
+                        Click="DismCleanup_Click"/>
+
+                <Button x:Name="btnFCIW" Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Content_UButton6}"
+                        IsEnabled="False"
+                        Click="OpenFCIW_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

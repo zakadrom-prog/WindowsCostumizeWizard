@@ -1,0 +1,95 @@
+﻿<Window x:Class="WindowsCostumizeWizard.MW_Element.UC_FPA_Element.W_NetFx3CabPickerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.MW_Element.UC_FPA_Element"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" ResizeMode="NoResize" ShowInTaskbar="True"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+
+    <Border Background="{DynamicResource WI_BorderBackground}"
+            BorderBrush="{DynamicResource WI_BorderBrush}"
+            BorderThickness="1" CornerRadius="10"
+            Padding="15" Opacity="0.9"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{DynamicResource Text_TitleInfoWindowAttention}"
+                       Foreground="{DynamicResource GlobalTitleForeground0}"
+                       FontSize="16" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <TextBlock Text="{DynamicResource Text_InfoSelectFile}"
+                       Foreground="{DynamicResource GlobalTitleForeground2}"
+                       VerticalAlignment="Center" FontWeight="Bold" Grid.Row="1"
+                       HorizontalAlignment="Center" Margin="0,5"/>
+
+            <Border Padding="5" Grid.Row="2"
+                    Background="{DynamicResource GlobalBorderBackground0}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                    BorderThickness="1">
+
+                <TextBlock x:Name="txtNameFx"
+                           Text="{Binding NameNetFx3}"
+                           Foreground="{DynamicResource GlobalTitleForeground1}"
+                           VerticalAlignment="Center" FontWeight="Bold"
+                           HorizontalAlignment="Center"/>
+            </Border>
+
+                <Grid Grid.Row="3" Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <TextBlock Text="[==========================="
+                               Foreground="{DynamicResource GlobalTitleForeground1}"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" />
+
+                    <TextBlock x:Name="ProgresLoad" Text="{Binding ProgressText}"
+                               Foreground="{DynamicResource GlobalTitleForeground2}"
+                               Margin="5,0" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Grid.Column="1"/>
+
+                    <TextBlock Text="===========================]"
+                               Foreground="{DynamicResource GlobalTitleForeground1}"
+                               Grid.Column="2"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"/>
+                    </Grid>
+
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button x:Name="btnSelectCab" Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Content_SelectFileCab}"
+                        Width="Auto" Click="SelectCab_Click"/>
+
+                <Button x:Name="btnInstallCab"
+                        Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Content_InsallFileCab}"
+                        Width="Auto" Grid.Column="1" Margin="5,0" IsEnabled="False"
+                        Click="InstallCab_Click"/>
+
+                <Button x:Name="btnAllCab" Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Content_CloseWindow}"
+                        Width="Auto" Grid.Column="2" Click="CloseWindowNetFx_Click"/>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

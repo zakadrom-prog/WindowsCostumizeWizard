@@ -1,0 +1,156 @@
+﻿<Window x:Class="WindowsCostumizeWizard.MW_Element.W_About"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.MW_Element"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="True"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterScreen">
+
+    <Border Background="{DynamicResource GlobalBorderBackground0}"
+            BorderBrush="{DynamicResource GlobalBorderBrush0}"
+            BorderThickness="1" Padding="5"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+        <StackPanel>
+            <Border Name="TitleAbout"
+                    Background="{DynamicResource GlobalBorderBackground2}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush0}" 
+                    Padding="4" Width="Auto" Height="Auto"
+                    Grid.Row="1" BorderThickness="1">
+
+                <TextBlock Text="{DynamicResource Text_TitleAbout}"
+                           Foreground="{DynamicResource GlobalTitleForeground0}"
+                           FontSize="16" 
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"/>
+            </Border>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center" Margin="0,5">
+                
+                <TextBlock Text="{DynamicResource Text_Version}"
+                           Foreground="{DynamicResource GlobalTitleForeground1}"
+                           VerticalAlignment="Center"/>
+
+                <TextBlock x:Name="txtVersion"
+                           Foreground="{DynamicResource GlobalTitleForeground2}"
+                           VerticalAlignment="Center"
+                           Margin="5,0" Grid.Column="1"/>
+
+                <TextBlock>
+                    <TextBlock.Resources>
+                        <Style TargetType="{x:Type Hyperlink}">
+                            <Setter Property="Foreground" Value="{DynamicResource GlobalTitleForeground5}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="YellowGreen"/>
+                                    <Setter Property="TextDecorations" Value="Underline"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Resources>
+                    
+                    <Hyperlink NavigateUri="https://github.com/zakadrom-prog/WindowsCostumizeWizard.git"
+                               RequestNavigate="Hyperlink_RequestNavigate"
+                               FontStyle="Italic">
+                        <Run Text="{DynamicResource Link_SiteProject}"/>
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+
+            <Border Name="StatusAbout" Height="200"
+                    Background="{DynamicResource GlobalBorderBackground3}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush3}"
+                    Padding="10" BorderThickness="1" VerticalAlignment="Top">
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+
+                    <TextBlock Text="{Binding InfoAbout}"
+                               Foreground="{DynamicResource GlobalTitleForeground1}"
+                               VerticalAlignment="Center" Margin="0,10" TextWrapping="Wrap"
+                               HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
+                </ScrollViewer>
+            </Border>
+
+            <Border Name="StatusUpdate" Margin="0,5"
+                    Background="{DynamicResource GlobalBorderBackground3}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush3}"
+                    Padding="5" BorderThickness="1" VerticalAlignment="Top">
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="{DynamicResource Text_UpdateStatus}"
+                               VerticalAlignment="Center"
+                               Foreground="{DynamicResource GlobalTitleForeground1}"/>
+
+                    <Button x:Name="btnEnableUpdates"
+                            Style="{DynamicResource GlobalActionButtonStyle}"
+                            Content="{DynamicResource Content_btnOn}"
+                            Margin="5,0" Grid.Column="1"
+                            Click="EnableUpdates_Click"/>
+
+                    <Button x:Name="btnDisableUpdates" Style="{DynamicResource GlobalActionButtonStyle}"
+                            Content="{DynamicResource Content_btnOff}"                       
+                            Grid.Column="2"
+                            Click="DisableUpdates_Click"/>
+                </Grid>
+            </Border>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock x:Name="txtProgresUpdateInfo"
+                           Text="{DynamicResource Text_UpdateStatus}"
+                           HorizontalAlignment="Center"
+                           Foreground="{DynamicResource GlobalTitleForeground2}"/>
+
+                <TextBlock x:Name="txtLinkUpdate" Grid.Column="1"
+                           IsEnabled="False" Opacity="0.5"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center">
+
+                    <TextBlock.Resources>
+                        <Style TargetType="{x:Type Hyperlink}">
+                            <Setter Property="Foreground" Value="{DynamicResource GlobalTitleForeground5}"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Foreground" Value="YellowGreen"/>
+                                    <Setter Property="TextDecorations" Value="Underline"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Resources>
+                    
+                    <Hyperlink NavigateUri="https://github.com/zakadrom-prog/WindowsCostumizeWizard/releases/download/v1.0.0.0/WindowsCostumizeWizard_v1.0.0.0.zip"
+                               RequestNavigate="Hyperlink_RequestNavigate"
+                               FontStyle="Italic">
+                        <Run Text="{DynamicResource Link_UpdateProgram}"/>
+                    </Hyperlink>
+                </TextBlock>
+            </Grid>
+
+            <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                    Content="{DynamicResource Content_CloseWindow}"
+                    Margin="0,5,0,0" Width="Auto"
+                        Click="CloseWindowAbout_Click"/>
+        </StackPanel>
+    </Border>
+</Window>

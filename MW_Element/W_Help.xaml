@@ -1,0 +1,52 @@
+﻿<Window x:Class="WindowsCostumizeWizard.MW_Element.UC_FPA_Element.W_Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.MW_Element.UC_FPA_Element"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" ResizeMode="NoResize" ShowInTaskbar="True"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+
+    <Border Background="{DynamicResource GlobalBorderBackground0}"
+            BorderBrush="{DynamicResource GlobalBorderBrush0}"
+            BorderThickness="1" Padding="5"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+        <StackPanel>
+            <Border Name="TitleAbout"
+                    Background="{DynamicResource GlobalBorderBackground2}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush0}" 
+                    Padding="4" Width="Auto" Height="Auto"
+                    Grid.Row="1" BorderThickness="1">
+
+                <TextBlock Text="{DynamicResource Text_TitleHelp}"
+                           Foreground="{DynamicResource GlobalTitleForeground0}"
+                           FontSize="16" 
+                           VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"/>
+            </Border>
+
+            <Border Name="StatusAbout" Margin="0,5" Height="200"
+                    Background="{DynamicResource GlobalBorderBackground3}"
+                    BorderBrush="{DynamicResource GlobalBorderBrush3}"
+                    Padding="10" BorderThickness="1" VerticalAlignment="Top">
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    
+                    <TextBlock Text="{Binding InfoHelp}"
+                               Foreground="{DynamicResource GlobalTitleForeground1}"
+                               VerticalAlignment="Center" Grid.Row="1" Margin="0,10" TextWrapping="Wrap"
+                               HorizontalAlignment="Center" FontWeight="Bold" FontStyle="Italic"/>
+                </ScrollViewer>
+            </Border>
+
+            <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                    Content="{DynamicResource Content_CloseWindow}" Grid.Column="1"
+                    Width="Auto" Grid.Row="2" Click="CloseWindowHelp_Click"/>
+        </StackPanel>
+    </Border>
+</Window>

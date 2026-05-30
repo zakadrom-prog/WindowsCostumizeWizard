@@ -1,0 +1,323 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <!-- Start MainWindow -->
+    <sys:String x:Key="Link_SiteProject">Project Page</sys:String>
+    <sys:String x:Key="Link_UpdateProgram">Update Program</sys:String>
+    <sys:String x:Key="Content_UpdateOpenInfo">Update</sys:String>
+    <sys:String x:Key="Content_UpdateInfoClose">Close</sys:String>
+    <sys:String x:Key="Text_UpdateShow">Don't show anymore</sys:String>
+    <sys:String x:Key="Text_UpdateA">A new version of the program is available</sys:String>
+    <sys:String x:Key="txt_NewUpdate">Update Available. Version:</sys:String>
+    <sys:String x:Key="txt_NoUpdate">Update Not Required</sys:String>
+    <sys:String x:Key="txt_NoJson">File update.json not found"</sys:String>
+    <sys:String x:Key="txt_NoJsonRead">Error reading update.json</sys:String>
+    <sys:String x:Key="Cont_CloseUpdate">Close</sys:String>
+
+    <sys:String x:Key="Text_Validation">Image Validation and Recovery</sys:String>
+    <sys:String x:Key="Content_FProg">📁 WCW folder</sys:String>
+    <sys:String x:Key="Content_Sett">⚙ Settings</sys:String>
+    <sys:String x:Key="Content_Help">❓ Help</sys:String>
+    <sys:String x:Key="Content_About">ℹ About</sys:String>
+    <sys:String x:Key="Content_CloseProgram">❌ Close</sys:String>
+    <sys:String x:Key="Content_OpenProgram">▶️ Continue</sys:String>
+    <sys:String x:Key="Content_ImageCheck">🛠️ Repair</sys:String>
+    <sys:String x:Key="Text_FolderWimWindow">The MountWIM folder is not empty.\nThe application will be terminated.</sys:String>
+    <sys:String x:Key="Text_TitleInfoWindowAttention">WARNING!</sys:String>
+    <sys:String x:Key="Text_StartInfoFolder">To mount and copy images, you need at least 35 GB of free space!</sys:String>
+    <!-- End -->
+
+    <!-- About Help -->
+    <sys:String x:Key="Text_TitleAbout">About</sys:String>
+    <sys:String x:Key="Text_About">Program text</sys:String>
+    <sys:String x:Key="Text_TitleHelp">Help</sys:String>
+    <sys:String x:Key="Text_Help">Help text</sys:String>
+
+    <sys:String x:Key="Text_Version">Version program:</sys:String>
+    <sys:String x:Key="Text_UpdateStatus">Automatically update the application</sys:String>
+    <sys:String x:Key="Content_btnOn">✔ On</sys:String>
+    <sys:String x:Key="Content_btnOff">❌ Off</sys:String>
+    <!-- End -->
+
+    <!-- SettingsWCW -->
+    <sys:String x:Key="Settings0">Language:</sys:String>
+    <sys:String x:Key="Settings1">Theme:</sys:String>
+    <sys:String x:Key="Settings2">Size:</sys:String>
+    <sys:String x:Key="SettingsLanguageNone">(none)</sys:String>
+    <sys:String x:Key="SettingsLanguageUA">Ukraine</sys:String>
+    <sys:String x:Key="SettingsLanguageEN">English</sys:String>
+    <sys:String x:Key="SettingsThemesNone">(no select)</sys:String>
+    <sys:String x:Key="SettingsThemesDark">Dark</sys:String>
+    <sys:String x:Key="SettingsThemeslight">Light</sys:String>
+    <!-- End -->
+
+    <!-- MainWindow -->
+    <sys:String x:Key="AppTitle">Windows Costumize Wizard Beta</sys:String>
+    <sys:String x:Key="SettingsTitle">Settings</sys:String>
+    <!-- End -->
+
+    <!-- UC_ISO -->
+    <sys:String x:Key="Content_OpenFolderIsoDisk">📂 Disk .iso</sys:String>
+    <sys:String x:Key="Content_OpenFolderIsoCopy">📂 Copy .iso</sys:String>
+    <sys:String x:Key="Text_ISOImage">ISO Image</sys:String>
+    <sys:String x:Key="Text_BlockUnmount">UNMOUNT ISO...</sys:String>
+    <sys:String x:Key="Text_BlockMount">MOUNT ISO...</sys:String>
+    <sys:String x:Key="Text_WimNotFoundMessage">The file install.wim / install.esd was not found.\nThe image is partially unpacked or has a non-standard structure.</sys:String>
+    <sys:String x:Key="Text_WimNotFoundTitle">WARNING</sys:String>
+    <sys:String x:Key="Text_DetectESD">Image install.esd detected.\nConversion required</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_OpenISO">🎯 Select image windows.iso</sys:String>
+    <sys:String x:Key="Content_DismountISO">⏏️ Unmount image .iso</sys:String>
+    <sys:String x:Key="Text_ISODisk">Image ISO</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_Copy">📄 Copy image</sys:String>
+    <sys:String x:Key="Content_Delete">🗑️ Delete image</sys:String>
+    <!-- End -->
+
+    <!-- UC_DeleteIndex -->
+    <sys:String x:Key="Text_EditIndex">Edit index</sys:String>
+    <sys:String x:Key="Text_EditIndexStatus">Status index</sys:String>
+    <sys:String x:Key="Text_Index">Index:</sys:String>
+    <sys:String x:Key="Content_InfoWim">ℹ install.wim/esd</sys:String>
+    <sys:String x:Key="Content_InfoWimDetail">ℹ Editorial details</sys:String>
+    <sys:String x:Key="Text_InfoDetail">Details</sys:String>
+    <sys:String x:Key="Text_TitleImage">Image:</sys:String>
+    <sys:String x:Key="Text_TitleImageWimInfo">Image details install</sys:String>
+    <sys:String x:Key="Content_CleanListIndex">🧹 Clear details</sys:String>
+    <sys:String x:Key="Text_WLStatus">Status Wimlib</sys:String>
+    <sys:String x:Key="Text_DICStatus0">Wimlib is present</sys:String>
+    <sys:String x:Key="Text_StatusOptimize0">Optimize:</sys:String>
+    <sys:String x:Key="Text_StatusOptimize1">(not done)</sys:String>
+    <sys:String x:Key="Text_NoImage">(no image)</sys:String>
+    <sys:String x:Key="Text_LoadErrorIndex">Error loading WIM indexes:</sys:String>
+    <sys:String x:Key="Text_NoDeleteIndex">Cannot delete - only one revision left.</sys:String>
+    <sys:String x:Key="Text_NoSelectIndex">Please select a revision to delete.</sys:String>
+    <sys:String x:Key="Text_ErrorDeleteIndex">Error deleting revision:</sys:String>
+    <sys:String x:Key="Text_ErrorWimlibInfo">File or wimlib not found!</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_IndexUpdate">♻️ Update</sys:String>
+    <sys:String x:Key="Content_ConvertWIM">🔀 Conversion</sys:String>
+    <sys:String x:Key="Content_DeleteIndex">🗑️</sys:String>
+    <sys:String x:Key="Content_Opz">🚀 Optimize *wimlib</sys:String>
+    <!-- End -->
+
+    <!-- UC_WIM -->
+    <sys:String x:Key="Content_OpenFolderMountWim">📂</sys:String>
+    <sys:String x:Key="Text_TitleWIM">WIM Image</sys:String>
+    <sys:String x:Key="Text_WINIndex">Index:</sys:String>
+    <sys:String x:Key="Text_Optimize">Optimize</sys:String>
+    <sys:String x:Key="Text_EndInfo0">Mounting complete</sys:String>
+    <sys:String x:Key="Text_EndInfo1">Result</sys:String>
+    <sys:String x:Key="Content_EndCloseInfo">❌ Close</sys:String>
+    <sys:String x:Key="Text_UnmountCommit">✔ Unbount(commit)</sys:String>
+    <sys:String x:Key="Text_UnmountDiscard">🚫 Unmount(discard)</sys:String>
+    <sys:String x:Key="Text_СComplete">Cleanup complete</sys:String>
+    <sys:String x:Key="Text_CFailed">Cleanup failed</sys:String>
+    <sys:String x:Key="Content_CreateIso">🛠️ Create image iso *oscdimg</sys:String>
+    <sys:String x:Key="Content_InfoOscdimg">ℹ oscdimg</sys:String>
+    <sys:String x:Key="Text_ErrorMountWIM">MountWIM path not set or does not exist.</sys:String>
+
+    <sys:String x:Key="Text_TitleCII">Create iso</sys:String>
+    <sys:String x:Key="Text_TitleInfoISOStart">Folder image:</sys:String>
+    <sys:String x:Key="Text_TitleInfoISOEnd">Folder ISO:</sys:String>
+    <sys:String x:Key="Content_CreateII">✨ Create</sys:String>
+
+    <!-- Mount Wim -->
+    <sys:String x:Key="Text_NoMountWim">(no mounted)</sys:String>
+    <sys:String x:Key="Text_BlockMountWim">MOUNTED WIM...</sys:String>
+    <sys:String x:Key="Text_BlockUnmountWim">UNMOUNTED WIM...</sys:String>
+
+    <!-- Кнопки -->
+    <sys:String x:Key="Content_MountIndex">📀 Mount</sys:String>
+    <sys:String x:Key="Content_UnmountDiscard">❌ Cancel</sys:String>
+    <sys:String x:Key="Content_UnmountCommit">💾 Save</sys:String>
+    <sys:String x:Key="Content_CleanupMountWim">🧹 Cleanup Image</sys:String>
+    <sys:String x:Key="Content_IntegrityWim">🛡️ Image Integrity</sys:String>
+    <!-- End -->
+
+    <!-- UC_Advanse -->
+    <sys:String x:Key="Text_TitleUtil">Advanced</sys:String>
+    <sys:String x:Key="Text_DriversBackup">Driver backup</sys:String>
+    <sys:String x:Key="Content_UButton2">📦 Collect</sys:String>
+    <sys:String x:Key="Content_UButton3">➕ Add drivers to system</sys:String>
+    <sys:String x:Key="Content_UButton5">➕ Add drivers to image</sys:String>
+    <sys:String x:Key="Content_UButton4">➕ Add/Delete programs</sys:String>
+    <sys:String x:Key="Content_UButton6">✨ Create a system image *wimlib</sys:String>
+    <sys:String x:Key="Text_DriversNoInfo">(none)</sys:String>
+    <sys:String x:Key="Text_SelectFolderCreateWim">📂 Select</sys:String>
+    <sys:String x:Key="Text_SelFolderCreateWIM">Select a location to create instsll.wim</sys:String>
+    <sys:String x:Key="Text_Warning">❗During the creation the image, you connot make changes to the system.❗</sys:String>
+    <sys:String x:Key="Text_DRH">🛠️ Repair System Image</sys:String>
+    <sys:String x:Key="Text_DCI">🧹 Clean Up System</sys:String>
+    <!-- End -->
+
+    <!-- Window Scan -->
+    <sys:String x:Key="RB_Scan0">Quick check</sys:String>
+    <sys:String x:Key="RB_Scan1">Full check (takes a long time)</sys:String>
+    <sys:String x:Key="Content_Scan">Start</sys:String>
+    <sys:String x:Key="Text_Cleanup">Cleaning Component Store...</sys:String>
+    <sys:String x:Key="Text_TitleCleanup">Integrity check</sys:String>
+    <!-- End -->
+
+    <!--  MainWindow Features -->
+    <sys:String x:Key="Content_MWButton0">Local system</sys:String>
+    <sys:String x:Key="Content_MWButton1">Mount offline image</sys:String>
+    <sys:String x:Key="Content_MWButton2">Features</sys:String>
+    <sys:String x:Key="Content_MWButton3">Packages</sys:String>
+    <sys:String x:Key="Content_MWButton4">Appx</sys:String>
+    <sys:String x:Key="Text_FeaturesEnabled">Enabled:</sys:String>
+    <sys:String x:Key="Text_FeaturesDisabled">Disabled:</sys:String>
+    <sys:String x:Key="Text_FeaturesOther">Other:</sys:String>
+    <sys:String x:Key="Text_FeaturesAll">All:</sys:String>
+    <sys:String x:Key="Content_FeaturesButton0">Update</sys:String>
+    <sys:String x:Key="Content_FeaturesButton1">Turn off</sys:String>
+    <sys:String x:Key="Content_FeaturesButton2">Turn on</sys:String>
+
+    <!-- Load Features -->
+    <sys:String x:Key="Text_BlockLoadFeatures">LOADEDING FEATURES...</sys:String>
+    <sys:String x:Key="Text_BlockLoadPackages">LOADEDSNG PACKAGES...</sys:String>
+    <sys:String x:Key="Text_BlockLoadAppx">LOADING APPX...</sys:String>
+    <!-- End -->
+
+    <!-- Packages/Appx -->
+    <sys:String x:Key="Text_TextAll">All:</sys:String>
+    <sys:String x:Key="Content_PA_Button0">Update</sys:String>
+    <sys:String x:Key="Content_PA_Button1">Delete</sys:String>
+    <sys:String x:Key="Content_SelectAll">Selected all</sys:String>
+    <sys:String x:Key="Text_ErrorLoadListFeatures">Error retrieving component lis.</sys:String>
+    <sys:String x:Key="Text_ErrorLoadListTree">Error loading tree.</sys:String>
+    <sys:String x:Key="Text_RestartPC">YOU NEED TO RELOAD YOUR PC!</sys:String>
+    <sys:String x:Key="Content_ShowName">Show full title</sys:String>
+    <sys:String x:Key="Text_LoadErrorOnlinePackages">Error Loading Online Packages.</sys:String>
+    <sys:String x:Key="Text_LoadErrorOnlineAppx">Error Loading Local Appx.</sys:String>
+
+    <!-- Window NetFx3-->
+    <sys:String x:Key="Text_SelectFxMethodS">Normal enable via dism. Network required.</sys:String>
+    <sys:String x:Key="Text_SelectFxMethodM">Via dism with cab selection. Offline mode.</sys:String>
+    <sys:String x:Key="Text_TitleNetFX">NetFx3 enable method</sys:String>
+    <sys:String x:Key="Text_btnS">Standard</sys:String>
+    <sys:String x:Key="Text_btnM">Manual</sys:String>
+    <sys:String x:Key="Content_btnS">Standard</sys:String>
+    <sys:String x:Key="Content_btnM">Manual</sys:String>
+
+    <sys:String x:Key="Text_InfoSelectFile">The cab file must match the system image in sources\sxs iso image!</sys:String>
+    <sys:String x:Key="Text_NoSelect">(not selected)</sys:String>
+    <sys:String x:Key="Content_SelectFileCab">📂 Select</sys:String>
+    <sys:String x:Key="Content_InsallFileCab">➕ Add</sys:String>
+    <sys:String x:Key="Content_CloseWindow">❌ Close</sys:String>
+    <!-- End -->
+
+    <!-- Block Window Progres -->
+    <sys:String x:Key="Text_MountedBlock">Mounted image</sys:String>
+    <sys:String x:Key="Text_BlockGetDrivers">DRIVERS BACKUP...</sys:String>
+    <!-- End -->
+
+    <!-- ConverterTitle -->
+    <sys:String x:Key="ConverterTitle">Converter</sys:String>
+    <sys:String x:Key="Text_ErrorConvertImage">Conversion failed!</sys:String>
+    <sys:String x:Key="Text_ErrorStartProcess">Process launch error:</sys:String>
+    <sys:String x:Key="Text_StatusImageInstall0">Image install.wim</sys:String>
+    <sys:String x:Key="Text_StatusImageInstall1">Image install.esd</sys:String>
+    <sys:String x:Key="Text_ConvertEsd">Convert > esd</sys:String>
+    <sys:String x:Key="Text_ConvertWim">Convert > wim</sys:String>
+    <sys:String x:Key="Text_NoInstall">install.wim/install.esd not found</sys:String>
+    <sys:String x:Key="Text_StatusProgress">(not done)</sys:String>
+    <!-- End -->
+
+    <!-- MessageINFO -->
+    <sys:String x:Key="Text_ErrorMountISO">Failed to mount ISO.</sys:String>
+    <sys:String x:Key="Text_ErrorCopyISO">Copying not completed.</sys:String>
+    <sys:String x:Key="Text_ErrorCopy">Error copy.</sys:String>
+    <sys:String x:Key="Text_ErrorTitle">Error</sys:String>
+    <!-- End -->
+
+    <!-- all Window info -->
+    <sys:String x:Key="Text_TitleInfoWindowInfo">INFORMATION</sys:String>
+    <sys:String x:Key="Text_TitleInfoWindowInfoError">ERROR</sys:String>
+    <sys:String x:Key="Text_AllInfo">Adding "wimlib" opens up additional application features.\n"wimlib" Download add to application root in directory.</sys:String>
+    <sys:String x:Key="Text_AllInfoOscdimg">Adding "oscdimg" opens up additional application features.\n"oscdimg" Download Windows ADK "Deployment tools",\nor add "oscdimg.exe" to the application root directory.</sys:String>
+    <sys:String x:Key="Text_InfoTitleInfo">Information</sys:String>
+    <!-- End -->
+
+    <!-- Admin -->
+    <sys:String x:Key="Text_Administration">The program is running with administrator rights.</sys:String>
+    <sys:String x:Key="Text_NoAdministration">The program is running without administrator rights.\nSome functions may be limited.</sys:String>
+    <!-- end -->
+
+    <!-- netfx3 -->
+    <sys:String x:Key="Text_SelectCab">Select the NetFx3 CAB file</sys:String>
+    <!-- End -->
+
+    <!-- Add drivers -->
+    <sys:String x:Key="Text_NoInf">INF not found.</sys:String>
+    <sys:String x:Key="Text_BlockAddDrivers">ADDING DRIVERS...</sys:String>
+    <sys:String x:Key="Content_SelectFolderDrivers">📂 Select</sys:String>
+    <sys:String x:Key="Content_AddDrivers">➕ Add</sys:String>
+    <!-- END -->
+
+    <!-- About -->
+    <sys:String x:Key="Text_AboutProgram">
+        Windows Customize Wizard Beta\n
+        \n
+        Windows Customize Wizard is a utility for working with Windows images\n
+        and servicing the local operating system environment.\n
+        \n
+        The application allows mounting and processing WIM/ESD images,\n
+        managing Windows components, features, Appx packages, drivers,\n
+        and performing cleanup and optimization operations.\n
+        \n
+        Main features:\n
+        • WIM/ESD image management\n
+        • Local system servicing\n
+        • Component and feature management\n
+        • Appx package management\n
+        • Driver collection and integration\n
+        • Image cleanup and integrity checks\n
+        • DISM-based processing tools\n
+        \n
+        The program is intended for advanced users, testers,\n
+        system administrators, and Windows customization enthusiasts.\n
+        \n
+        Developer: ZaKadrom\n
+        © 2026 ZaKadrom
+    </sys:String>
+    <!-- End -->
+
+    <!-- Help -->
+    <sys:String x:Key="Text_HelpProgram">
+        Windows Customize Wizard Help\n
+        \n
+        Quick start:\n
+        \n
+        1. Select a Windows ISO image.\n
+        2. Mount the required WIM/ESD index.\n
+        3. Open Features, Packages, or Appx sections.\n
+        4. Enable, disable, or remove components.\n
+        5. Save changes to the mounted image.\n
+        6. Unmount the image after completion.\n
+        \n
+        Available tools:\n
+        • Mount and unmount Windows images\n
+        • Local system servicing\n
+        • Component management\n
+        • Appx package control\n
+        • Driver export and integration\n
+        • Image cleanup and optimization\n
+        • Image integrity verification\n
+        • Conversion between WIM and ESD\n
+        \n
+        Important:\n
+        • Run the application as Administrator.\n
+        • Do not close the program during image servicing.\n
+        • Large images may require significant disk space.\n
+        • DISM operations can take a long time depending on image size.\n
+        \n
+        Developer: ZaKadrom\n
+        © 2026 ZaKadrom
+    </sys:String>
+    <!-- End -->
+</ResourceDictionary>

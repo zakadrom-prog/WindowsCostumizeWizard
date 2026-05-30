@@ -1,0 +1,48 @@
+﻿<Window x:Class="WindowsCostumizeWizard.WindowInfo.WindowMessageInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.WindowInfo"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" ResizeMode="NoResize" ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+
+    <Border Background="{DynamicResource WI_BorderBackground}"
+            BorderBrush="{DynamicResource WI_BorderBrush}"
+            BorderThickness="1" Padding="10"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="{DynamicResource Text_TitleInfoWindowInfo}"
+                       Foreground="{DynamicResource GlobalTitleForeground0}"
+                       FontSize="16"
+                       VerticalAlignment="Center"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <Grid Grid.Row="1" Margin="0,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Image Source="/Resources/Images/info.png" Margin="0,0,10,0"/>
+                
+                <TextBlock Text="{Binding InfoText}"
+                           Foreground="{DynamicResource GlobalTitleForeground1}"
+                           VerticalAlignment="Center" Grid.Column="1"
+                           HorizontalAlignment="Center" FontWeight="Bold"/>
+            </Grid>
+
+            <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                    Content="OK" Width="100" Click="CloseWindowInfo_Click" Grid.Row="2"/>
+        </Grid>
+    </Border>
+</Window>

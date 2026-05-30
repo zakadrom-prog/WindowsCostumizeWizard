@@ -1,0 +1,61 @@
+﻿<Window x:Class="WindowsCostumizeWizard.MW_Element.W_Converter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.MW_Element"
+        mc:Ignorable="d"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Title="{DynamicResource ConverterTitle}">
+    
+    <Grid Background="{DynamicResource GlobalBorderBackground0}">
+        <Border Name="BorderSatting" Padding="5" Margin="5"
+                Background="{DynamicResource GlobalBorderBackground0}"
+                BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                BorderThickness="1">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock x:Name="StatusImageInstall" Text="{Binding}"
+                           Foreground="{DynamicResource GlobalTitleForeground1}"
+                           FontStyle="Italic"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <Grid Grid.Row="1" Margin="0,5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <RadioButton x:Name="rbConvertDISM" Content="dism" FontStyle="Italic"
+                                 Foreground="{DynamicResource GlobalTitleForeground0}" IsChecked="True"
+                                 VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                    <RadioButton x:Name="rbConvertWimlib" Content="wimlib" FontStyle="Italic"
+                                 Foreground="{DynamicResource GlobalTitleForeground0}" Grid.Column="1" IsEnabled="False" Opacity="0.5"
+                                 VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Grid>
+
+                <ProgressBar x:Name="ProgressBarConvert" Grid.Row="2" Width="200" Height="10"/>
+
+                <TextBlock x:Name="ProgressTextConvert" Grid.Row="3" Foreground="{DynamicResource GlobalTitleForeground1}"
+                           HorizontalAlignment="Center" Margin="0,5"/>
+
+                <Button x:Name="btnConvertImage" Width="200"
+                        Style="{DynamicResource GlobalActionButtonStyle}"
+                        Content="{DynamicResource Text_ConvertWIM}" Grid.Row="4"
+                        Click="ConvertImage_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

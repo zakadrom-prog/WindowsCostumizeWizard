@@ -1,0 +1,73 @@
+﻿<Window x:Class="WindowsCostumizeWizard.MW_Element.W_WindowScanImage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard.MW_Element"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        ShowInTaskbar="False"
+        SizeToContent="WidthAndHeight"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid Background="{DynamicResource GlobalBorderBackground0}">
+        <Border Background="{DynamicResource GlobalBorderBackground0}"
+                BorderBrush="{DynamicResource GlobalBorderBrush0}"
+                BorderThickness="1" Margin="5"
+                Padding="5">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{DynamicResource Text_TitleCleanup}"
+                           Foreground="{DynamicResource GlobalTitleForeground0}"
+                           Margin="0,0,5,0" VerticalAlignment="Center"
+                           HorizontalAlignment="Center" FontWeight="Bold"/>
+
+                <RadioButton x:Name="rbCheckHealth" Content="{DynamicResource RB_Scan0}"
+                             Foreground="{DynamicResource GlobalTitleForeground1}"
+                             IsChecked="True" Grid.Row="1" Margin="0,5,0,0"
+                             FontStyle="Italic"/>
+
+                <RadioButton x:Name="rbScanHealth" Content="{DynamicResource RB_Scan1}"
+                             Foreground="{DynamicResource GlobalTitleForeground1}"
+                             Grid.Row="2" Margin="0,5" FontStyle="Italic"/>
+
+                <Border Name="StatusMount" Grid.Row="3" Margin="0,0,0,5"
+                        Background="{DynamicResource GlobalBorderBackground3}"
+                        BorderBrush="{DynamicResource GlobalBorderBrush3}"
+                        Padding="3" BorderThickness="1" Height="21" VerticalAlignment="Top">
+
+                    <TextBlock x:Name="txtStatusProgresScan" Text="{Binding ScanText}"
+                               Foreground="{DynamicResource GlobalTitleForeground3}"
+                               Margin="0,0,5,0" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" FontSize="10"/>
+                </Border>
+
+                <Grid Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btnScanPerform" Style="{DynamicResource GlobalActionButtonStyle}"
+                            Content="{DynamicResource Content_Scan}" Margin="0,0,5,0"
+                            Width="Auto" Grid.Row="3" Click="ScanPerform_Click"/>
+
+                    <Button x:Name="btnScanClose" Style="{DynamicResource GlobalActionButtonStyle}"
+                            Content="{DynamicResource Content_CloseWindow}"
+                            Width="Auto" Grid.Column="1" Click="WindowScanClose_Click"/>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

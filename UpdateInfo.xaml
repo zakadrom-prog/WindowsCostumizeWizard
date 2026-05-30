@@ -1,0 +1,58 @@
+﻿<Window x:Class="WindowsCostumizeWizard.UpdateInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowsCostumizeWizard"
+        mc:Ignorable="d" WindowStyle="None" AllowsTransparency="True"
+        Background="Transparent" ResizeMode="NoResize"
+        SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner">
+
+    <Border Background="{DynamicResource WI_BorderBackground}"
+            BorderBrush="{DynamicResource WI_BorderBrush}"
+            BorderThickness="1" Padding="10" Width="Auto"
+            MouseLeftButtonDown="Border_MouseLeftButtonDown">
+
+        <StackPanel>
+            <TextBlock Text="{DynamicResource Text_TitleInfoWindowInfo}"
+                       Foreground="{DynamicResource GlobalTitleForeground0}"
+                       FontSize="16" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <TextBlock Text="{DynamicResource Text_UpdateA}"
+                       Foreground="{DynamicResource GlobalTitleForeground2}"
+                       VerticalAlignment="Center" Margin="0,5"
+                       HorizontalAlignment="Center" FontWeight="Bold"/>
+
+            <TextBlock HorizontalAlignment="Center">
+                <TextBlock.Resources>
+                    <Style TargetType="{x:Type Hyperlink}">
+                        <Setter Property="Foreground" Value="{DynamicResource GlobalTitleForeground5}"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource GlobalTitleForeground3}"/>
+                                <Setter Property="TextDecorations" Value="Underline"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Resources>
+
+                <Hyperlink NavigateUri="https://github.com/zakadrom-prog/WindowsCostumizeWizard/releases/download/v1.0.0.0/WindowsCostumizeWizard_v1.0.0.0.zip"
+                           RequestNavigate="Hyperlink_RequestNavigate"
+                           FontStyle="Italic">
+                    <Run Text="{DynamicResource Link_UpdateProgram}"/>
+                </Hyperlink>
+            </TextBlock>
+
+            <CheckBox x:Name="DisableUpdatesCheckBox"
+                      Content="{DynamicResource Text_UpdateShow}"
+                      Foreground="{DynamicResource GlobalTitleForeground1}"
+                      Checked="CheckBox_Checked" Margin="0,5" 
+                      Unchecked="CheckBox_Unchecked"/>
+
+            <Button Style="{DynamicResource GlobalActionButtonStyle}"
+                    Content="{DynamicResource Content_UpdateInfoClose}"
+                    Click="CloseWindowInfo_Click"/>
+        </StackPanel>
+    </Border>
+</Window>

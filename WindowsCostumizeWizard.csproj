@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54BB064D-1E0C-4C69-B249-65099E18BD19}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WindowsCostumizeWizard</RootNamespace>
+    <AssemblyName>wcw</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>app.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomMarshalers" />
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft-WindowsAPICodePack-Core.1.1.5\lib\net48\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.5.0, Culture=neutral, PublicKeyToken=8985beaab7ea3f04, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft-WindowsAPICodePack-Shell.1.1.5\lib\net48\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AppConfig.cs" />
+    <Compile Include="MountValidation.xaml.cs">
+      <DependentUpon>MountValidation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\CD_IsoHelper.cs" />
+    <Compile Include="MW_Element\ExplorerNavigation.cs" />
+    <Compile Include="MW_Element\IsoMounter.cs" />
+    <Compile Include="MW_Element\UC_Advansed\W_SelectFolderCreateWim.xaml.cs">
+      <DependentUpon>W_SelectFolderCreateWim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_DeleteIndex.xaml.cs">
+      <DependentUpon>UC_DeleteIndex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_FPA_Element\AppxItem.cs" />
+    <Compile Include="MW_Element\UC_FPA_Element\BoolToVisibilityConverter.cs" />
+    <Compile Include="MW_Element\UC_FPA_Element\DismRunner.cs" />
+    <Compile Include="MW_Element\UC_FPA_Element\FeatureItem.cs" />
+    <Compile Include="MW_Element\UC_FPA_Element\FpaState.cs" />
+    <Compile Include="MW_Element\UC_FPA_Element\PackageItem.cs" />
+    <Compile Include="MW_Element\W_About.xaml.cs">
+      <DependentUpon>W_About.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_Advansed\W_AddDriversImage.xaml.cs">
+      <DependentUpon>W_AddDriversImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_Advansed\W_AddDriversSystem.xaml.cs">
+      <DependentUpon>W_AddDriversSystem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\W_CreateImageIso.xaml.cs">
+      <DependentUpon>W_CreateImageIso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\W_Help.xaml.cs">
+      <DependentUpon>W_Help.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_FPA_Element\W_NetFx3CabPickerWindow.xaml.cs">
+      <DependentUpon>W_NetFx3CabPickerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_FPA_Element\UC_All_FPA.xaml.cs">
+      <DependentUpon>UC_All_FPA.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_FPA_Element\UC_Appx.xaml.cs">
+      <DependentUpon>UC_Appx.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_FPA_Element\UC_Features.xaml.cs">
+      <DependentUpon>UC_Features.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_FPA_Element\UC_Packages.xaml.cs">
+      <DependentUpon>UC_Packages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_ISO.xaml.cs">
+      <DependentUpon>UC_ISO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_UniversalExplorer.xaml.cs">
+      <DependentUpon>UC_UniversalExplorer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_Advansed\UC_Advansed.xaml.cs">
+      <DependentUpon>UC_Advansed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\UC_WIM.xaml.cs">
+      <DependentUpon>UC_WIM.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\W_InfoWimEsd.xaml.cs">
+      <DependentUpon>W_InfoWimEsd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\W_WindowScanImage.xaml.cs">
+      <DependentUpon>W_WindowScanImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\W_WindowEndMount.xaml.cs">
+      <DependentUpon>W_WindowEndMount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MW_Element\W_Сonverter.xaml.cs">
+      <DependentUpon>W_Сonverter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWCW.xaml.cs">
+      <DependentUpon>SettingsWCW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateChecker.cs" />
+    <Compile Include="UpdateInfo.xaml.cs">
+      <DependentUpon>UpdateInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="wcwAppState.cs" />
+    <Compile Include="WindowAdministrator.xaml.cs">
+      <DependentUpon>WindowAdministrator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowinfo\WindowInfoFolderWim.xaml.cs">
+      <DependentUpon>WindowInfoFolderWim.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowinfo\WindowMessageInfo.xaml.cs">
+      <DependentUpon>WindowMessageInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowinfo\WindowMessageInfoError.xaml.cs">
+      <DependentUpon>WindowMessageInfoError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowinfo\WindowProgramInfo.xaml.cs">
+      <DependentUpon>WindowProgramInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowinfo\WindowProgressBlock.xaml.cs">
+      <DependentUpon>WindowProgressBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windowinfo\WindowLocationInfo.xaml.cs">
+      <DependentUpon>WindowLocationInfo.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Languages\Language_en.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Languages\Language_ua.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MountValidation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_Advansed\W_SelectFolderCreateWim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_DeleteIndex.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MW_Element\W_About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_Advansed\W_AddDriversImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_Advansed\W_AddDriversSystem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\W_CreateImageIso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\W_Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_FPA_Element\W_NetFx3CabPickerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_FPA_Element\UC_All_FPA.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_FPA_Element\UC_Appx.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_FPA_Element\UC_Features.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MW_Element\UC_FPA_Element\UC_Packages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\UC_ISO.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MW_Element\UC_UniversalExplorer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MW_Element\UC_Advansed\UC_Advansed.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MW_Element\UC_WIM.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MW_Element\W_InfoWimEsd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\W_WindowScanImage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\W_WindowEndMount.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MW_Element\W_Сonverter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsWCW.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Dark.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Light.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UpdateInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowAdministrator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowinfo\WindowInfoFolderWim.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowinfo\WindowMessageInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windowinfo\WindowMessageInfoError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowinfo\WindowProgramInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windowinfo\WindowProgressBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windowinfo\WindowLocationInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Resources\features.json" />
+    <Resource Include="MW_Element\UC_Advansed\Resources\select.ico" />
+    <Resource Include="Resources\repair.ico" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.manifest" />
+    <Resource Include="features.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\attention.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\admin0.png" />
+    <Resource Include="Resources\Images\admin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\wcwfolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windowinfo\Resources\select.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Windowinfo\Resources\info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\install.ico" />
+    <Resource Include="Resources\Images\install.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\settings.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="MW_Element\Resources\cmd.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app_d.png" />
+    <Resource Include="Resources\app_l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MountValidation.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LICENSE" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
