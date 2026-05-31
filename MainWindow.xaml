@@ -8,8 +8,8 @@
         xmlns:local1="clr-namespace:WindowsCostumizeWizard.MW_Element.UC_Advansed"
         mc:Ignorable="d" WindowStyle="None"
         RenderTransformOrigin="0.5,0.5"
-        Icon="Resources/app.ico"
-        AllowsTransparency="True"
+        Icon="Resources/app.ico" 
+        AllowsTransparency="True" ResizeMode="CanResize" 
         Background="Transparent">
 
     <Window.RenderTransform>

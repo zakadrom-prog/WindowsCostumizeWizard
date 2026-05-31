@@ -37,7 +37,7 @@
                     </Style>
                 </TextBlock.Resources>
 
-                <Hyperlink NavigateUri="https://github.com/zakadrom-prog/WindowsCostumizeWizard/releases/download/v1.0.0.0/WindowsCostumizeWizard_v1.0.0.0.zip"
+                <Hyperlink NavigateUri="https://github.com/zakadrom-prog/WindowsCostumizeWizard/releases/download/v1.0.0.0"
                            RequestNavigate="Hyperlink_RequestNavigate"
                            FontStyle="Italic">
                     <Run Text="{DynamicResource Link_UpdateProgram}"/>
