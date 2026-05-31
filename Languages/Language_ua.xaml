@@ -55,7 +55,7 @@
     <!-- End -->
 
     <!-- MainWindow -->
-    <sys:String x:Key="AppTitle">Майстер костюмів Windows Beta</sys:String>
+    <sys:String x:Key="AppTitle">Майстер кастомів Windows Beta</sys:String>
     <sys:String x:Key="SettingsTitle">Налаштування</sys:String>
     <!-- End -->
 
