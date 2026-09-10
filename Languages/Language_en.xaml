@@ -53,7 +53,7 @@
     <!-- End -->
 
     <!-- MainWindow -->
-    <sys:String x:Key="AppTitle">Windows Costumize Wizard Beta</sys:String>
+    <sys:String x:Key="AppTitle">Windows Costumize Wizard</sys:String>
     <sys:String x:Key="SettingsTitle">Settings</sys:String>
     <!-- End -->
 
@@ -176,6 +176,7 @@
     <sys:String x:Key="Content_FeaturesButton0">Update</sys:String>
     <sys:String x:Key="Content_FeaturesButton1">Turn off</sys:String>
     <sys:String x:Key="Content_FeaturesButton2">Turn on</sys:String>
+    <sys:String x:Key="Content_Sel">+ Select</sys:String>
 
     <!-- Load Features -->
     <sys:String x:Key="Text_BlockLoadFeatures">LOADEDING FEATURES...</sys:String>
@@ -191,6 +192,7 @@
     <sys:String x:Key="Text_ErrorLoadListFeatures">Error retrieving component lis.</sys:String>
     <sys:String x:Key="Text_ErrorLoadListTree">Error loading tree.</sys:String>
     <sys:String x:Key="Text_RestartPC">YOU NEED TO RELOAD YOUR PC!</sys:String>
+    <sys:String x:Key="Text_OfflineFeatureUpdated">WINDOWS IMAGE UPDATED!</sys:String>
     <sys:String x:Key="Content_ShowName">Show full title</sys:String>
     <sys:String x:Key="Text_LoadErrorOnlinePackages">Error Loading Online Packages.</sys:String>
     <sys:String x:Key="Text_LoadErrorOnlineAppx">Error Loading Local Appx.</sys:String>
@@ -261,7 +263,7 @@
 
     <!-- About -->
     <sys:String x:Key="Text_AboutProgram">
-        Windows Customize Wizard Beta\n
+        Windows Customize Wizard Beta version\n
         \n
         Windows Customize Wizard is a utility for working with Windows images\n
         and servicing the local operating system environment.\n

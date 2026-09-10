@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading;
 using System.Windows;
 using WindowsCostumizeWizard.Windowinfo;
 using WindowsCostumizeWizard.WindowInfo;
@@ -11,13 +12,15 @@ namespace WindowsCostumizeWizard
 {
     public partial class App : Application
     {
+        private static Mutex _appMutex;
+
         public static AppConfig Config { get; private set; }
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            _appMutex = new Mutex(false, "WindowsCostumizeWizard_Main");
+
             base.OnStartup(e);
-
-
 
             EnsureInternalResources();
 

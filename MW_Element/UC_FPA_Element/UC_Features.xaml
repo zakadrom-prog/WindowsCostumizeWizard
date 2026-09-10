@@ -130,9 +130,11 @@
                                     </TextBlock.Style>
                                 </TextBlock>
                                 
-                                <Button Style="{DynamicResource GlobalActionButtonStyleC}"
-                                        Content="Вибрати"
-                                        BorderThickness="1" Width="70"
+                                <Button x:Name="btnNetFx3"
+                                        IsEnabled="{Binding IsChecked}"
+                                        Style="{DynamicResource GlobalActionButtonStyleC}"
+                                        Content="{DynamicResource Content_Sel}"
+                                        BorderThickness="1" Width="80"
                                         Visibility="{Binding IsPayloadRemoved, Converter={StaticResource BoolToVisibility}}"
                                         Click="OpenNetFx3Source_Click"/>
                             </StackPanel>

@@ -412,7 +412,7 @@ namespace WindowsCostumizeWizard.MW_Element
 
                 if (Application.Current.MainWindow is MainWindow mw)
                 {
-                    mw.RefreshFeaturesOnline();
+                    mw.EnableFeaturesNetFx3();
                 }
             }
         }

@@ -208,6 +208,7 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
             FeaturesList = rootItems;
 
             UpdateFeatureRules();
+            UpdateOppositeRules();
             LockPendingFeatures();
             UpdateCounts();
 
@@ -282,24 +283,44 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
         {
             var allItems = GetAllItemsRecursive(FeaturesList).ToList();
 
+            // Вибрана Enabled-фіча
             bool anyEnabledChecked = allItems
-                .Any(x => x.IsChecked && x.State.Equals("Enabled", StringComparison.OrdinalIgnoreCase));
-
-            bool anyDisabledGroupChecked = allItems
                 .Any(x => x.IsChecked &&
-                    (x.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase) ||
-                     x.State.Equals("Disabled with Payload Removed", StringComparison.OrdinalIgnoreCase)));
+                    x.State.Equals("Enabled", StringComparison.OrdinalIgnoreCase));
+
+            // Вибрана звичайна Disabled-фіча
+            bool anyDisabledChecked = allItems
+                .Any(x => x.IsChecked &&
+                    x.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase));
+
+            // Вибрана Disabled with Payload Removed
+            bool anyPayloadRemovedChecked = allItems
+                .Any(x => x.IsChecked &&
+                    x.State.Equals(
+                        "Disabled with Payload Removed",
+                        StringComparison.OrdinalIgnoreCase));
 
             foreach (var item in allItems)
             {
                 if (item.State.Equals("Enabled", StringComparison.OrdinalIgnoreCase))
                 {
-                    item.IsEnabledCheck = !anyDisabledGroupChecked;
+                    item.IsEnabledCheck =
+                        !anyDisabledChecked &&
+                        !anyPayloadRemovedChecked;
                 }
-                else if (item.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase) ||
-                         item.State.Equals("Disabled with Payload Removed", StringComparison.OrdinalIgnoreCase))
+                else if (item.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase))
                 {
-                    item.IsEnabledCheck = !anyEnabledChecked;
+                    item.IsEnabledCheck =
+                        !anyEnabledChecked &&
+                        !anyPayloadRemovedChecked;
+                }
+                else if (item.State.Equals(
+                             "Disabled with Payload Removed",
+                             StringComparison.OrdinalIgnoreCase))
+                {
+                    item.IsEnabledCheck =
+                        !anyEnabledChecked &&
+                        !anyDisabledChecked;
                 }
                 else
                 {
@@ -307,15 +328,16 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
                 }
             }
 
+            // Enabled → Disable
             OffFeatures.IsEnabled = anyEnabledChecked;
-            OnFeatures.IsEnabled = anyDisabledGroupChecked;
+
+            // ТІЛЬКИ звичайний Disabled → Enable
+            OnFeatures.IsEnabled = anyDisabledChecked;
         }
 
         public async Task RefreshFeatures()
         {
-            FeaturesList.Clear();
             await LoadFeatures();
-            LoadFeaturesTree();
         }
 
         private async void UpdateFeature_Click(object sener, RoutedEventArgs e)
@@ -379,7 +401,7 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
             }
         }
 
-        private async void EnableFeatures_Click(object sender, RoutedEventArgs e)
+        public async void EnableFeatures_Click(object sender, RoutedEventArgs e)
         {
             if (cbConsoleView.IsChecked == true)
                 await ProcessFeatures1(true);
@@ -400,7 +422,8 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
             var features = GetAllItemsRecursive(FeaturesList)
                 .Where(x => x.IsChecked &&
                        (enable
-                            ? x.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase)
+                            ? (x.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase) ||
+                            x.State.Equals("Disabled with Payload Removed", StringComparison.OrdinalIgnoreCase))
                             : x.State.Equals("Enabled", StringComparison.OrdinalIgnoreCase)))
                 .ToList();
 
@@ -581,12 +604,13 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
                 }
 
                 await RefreshFeatures();
-                TextStatusFeaturesPC.Text = Application.Current.Resources["Text_RestartPC"] as string;
+                TextStatusFeaturesPC.Text = _mode == UC_All_FPA.FpaMode.Online
+                        ? Application.Current.Resources["Text_RestartPC"] as string
+                        : Application.Current.Resources["Text_OfflineFeatureUpdated"] as string;
             }
             finally
             {
                 Window.GetWindow(this).IsEnabled = true;
-                OnFeatures.IsEnabled = false;
             }
         }
 
@@ -594,9 +618,11 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
         {
             var features = GetAllItemsRecursive(FeaturesList)
                 .Where(x => x.IsChecked &&
-                       (enable
-                            ? x.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase)
-                            : x.State.Equals("Enabled", StringComparison.OrdinalIgnoreCase)))
+                (enable
+                       ? (x.State.Equals("Disabled", StringComparison.OrdinalIgnoreCase) ||
+                       x.State.Equals("Disabled with Payload Removed", StringComparison.OrdinalIgnoreCase))
+                       : x.State.Equals("Enabled", StringComparison.OrdinalIgnoreCase)))
+
                 .ToList();
 
             if (!features.Any()) return;
@@ -633,11 +659,6 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
                 {
                     Window.GetWindow(this).IsEnabled = true;
                     await RefreshFeatures();
-
-                    if (enable)
-                        OnFeatures.IsEnabled = false;
-                    else
-                        OffFeatures.IsEnabled = false;
                 });
             };
         }

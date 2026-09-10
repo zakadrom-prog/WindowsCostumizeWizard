@@ -73,6 +73,11 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
             ReInit();
         }
 
+        public void OnlineNetFx3()
+        {
+            _ucFeatures?.EnableFeatures_Click(null, null);
+        }
+
         private void Offline_Click(object sender, RoutedEventArgs e)
         {
             Offline();

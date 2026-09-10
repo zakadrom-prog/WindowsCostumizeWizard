@@ -155,7 +155,6 @@ namespace WindowsCostumizeWizard
             uc_di.SetWimlibState(wimlibState);
             uc_adv.btnFCIW.IsEnabled = wimlibState;
 
-
             // ===== OSCDIMG =====
             bool oscdimgState = wcwAppState.OscdimgSysPath || wcwAppState.OscdimgProgPath;
 
@@ -235,9 +234,9 @@ namespace WindowsCostumizeWizard
             uc_iso.btnDeleteIsoCopy.IsEnabled = disabled;
         }
 
-        public async void RefreshFeaturesOnline()
+        public void EnableFeaturesNetFx3()
         {
-            uc_AllFPA.Online();
+            uc_AllFPA.OnlineNetFx3();
         }
 
         public void UpdateJurnalText()
@@ -274,7 +273,9 @@ namespace WindowsCostumizeWizard
                 Directory.Exists(extractPath) &&
                 Directory.EnumerateFileSystemEntries(extractPath).Any();
 
-            uc_iso.btnCopyISO.IsEnabled = isIsoMounted && !hasExtractIso;            
+            uc_iso.btnCopyISO.IsEnabled = isIsoMounted && !hasExtractIso;
+            ActivateBTN_InfoWimEsd(hasExtractIso);
+
         }
 
         public void WD_UpdateButtonState()
@@ -316,9 +317,7 @@ namespace WindowsCostumizeWizard
             {
                 Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                 {
-                    var infoWindow = new WindowMessageInfo(
-                        Application.Current.Resources["Text_WimNotFoundMessage"] as string
-                    );
+                    var infoWindow = new WindowMessageInfo(Application.Current.Resources["Text_WimNotFoundMessage"] as string);
 
                     infoWindow.Owner = Application.Current.MainWindow;
                     infoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
@@ -334,6 +333,11 @@ namespace WindowsCostumizeWizard
             uc_adv.btnADI.IsEnabled = enabled;
         }
 
+        public void ActivateBTN_InfoWimEsd(bool enabled)
+        {
+            uc_di.btnInfoInstall.IsEnabled = enabled;
+        }
+
         private void ActivateWimMode()
         {
             uc_iso.btnOpenIso.IsEnabled = false;
@@ -346,7 +350,6 @@ namespace WindowsCostumizeWizard
             uc_di.btnDeleteIndex.IsEnabled = true;
             uc_di.btnConvertImage.IsEnabled = true;
             uc_di.btnDeleteIndex.IsEnabled = true;
-            uc_di.btnInfoInstall.IsEnabled = true;
             uc_di.TextStatusWim.Text = "install.wim";
             uc_di.LoadWimIndexes();
             IsoOscdimgBTN();
@@ -364,7 +367,6 @@ namespace WindowsCostumizeWizard
             uc_di.SetIndexWimState(false);
             uc_di.btnConvertImage.IsEnabled = true;
             uc_di.btnDeleteIndex.IsEnabled = true;
-            uc_di.btnInfoInstall.IsEnabled = true;
             uc_di.TextStatusWim.Text = "install.esd";
 
             Application.Current.Dispatcher.BeginInvoke(new Action(() =>

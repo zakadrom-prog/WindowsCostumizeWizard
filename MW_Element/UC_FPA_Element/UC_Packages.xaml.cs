@@ -144,6 +144,7 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
         {
             Packages.Clear();
             await LoadPackagesAsync();
+            UpdateRemoveButtonState();
         }
 
         private async Task LoadPackagesAsync()

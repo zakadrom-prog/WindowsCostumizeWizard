@@ -56,10 +56,18 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
 
         private void SelectCab_Click(object sender, RoutedEventArgs e)
         {
+            string sxsPath = Path.Combine(
+                wcwAppState.ExtractIsoPath,
+                "sources",
+                "sxs");
+
             var dialog = new OpenFileDialog
             {
                 Filter = "CAB files (*.cab)|*.cab",
-                Title = Application.Current.Resources["Text_SelectCab"] as string
+                Title = Application.Current.Resources["Text_SelectCab"] as string,
+                InitialDirectory = Directory.Exists(sxsPath)
+                    ? sxsPath
+                    : wcwAppState.ExtractIsoPath
             };
 
             if (dialog.ShowDialog() == true)
@@ -76,7 +84,7 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
             if (string.IsNullOrEmpty(FullPath))
                 return null;
 
-            return $"dism /online /add-package /packagepath:\"{FullPath}\"";
+            return $"dism /Image:\"{wcwAppState.MountWimPath}\" /Add-Package /PackagePath:\"{FullPath}\"";
         }
 
         private async void InstallCab_Click(object sender, RoutedEventArgs e)
@@ -144,13 +152,13 @@ namespace WindowsCostumizeWizard.MW_Element.UC_FPA_Element
             }
         }
 
-        private async void CloseWindowNetFx_Click(object sender, RoutedEventArgs e)
+        private void CloseWindowNetFx_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
 
             if (Application.Current.MainWindow is MainWindow mw)
             {
-                await mw.RefreshFeatures();
+                mw.EnableFeaturesNetFx3();
             }
         }
     }

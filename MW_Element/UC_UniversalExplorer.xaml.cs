@@ -12,7 +12,6 @@ namespace WindowsCostumizeWizard.MW_Element
 {
     public partial class UC_UniversalExplorer : UserControl
     {
-        // CurrentPath як DependencyProperty
         public static readonly DependencyProperty CurrentPathProperty =
             DependencyProperty.Register(
                 "CurrentPath",
@@ -43,23 +42,25 @@ namespace WindowsCostumizeWizard.MW_Element
 
         private void UC_UniversalExplorer_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if (e.Key == System.Windows.Input.Key.Back) // клавіша Backspace
-            {
-                // Логіка повернення на папку вище прямо тут
-                if (!string.IsNullOrEmpty(CurrentPath))
-                {
-                    DirectoryInfo parent = Directory.GetParent(CurrentPath);
-                    if (parent != null && Directory.Exists(parent.FullName))
-                    {
-                        CurrentPath = parent.FullName; // автоматично завантажить папку
-                    }
-                }
+            if (e.Key != System.Windows.Input.Key.Back)
+                return;
 
-                e.Handled = true; // щоб подія не пішла далі
+            if (SearchBox.IsKeyboardFocusWithin)
+                return;
+
+            if (!string.IsNullOrEmpty(CurrentPath))
+            {
+                DirectoryInfo parent = Directory.GetParent(CurrentPath);
+
+                if (parent != null && Directory.Exists(parent.FullName))
+                {
+                    CurrentPath = parent.FullName;
+                }
             }
+
+            e.Handled = true;
         }
 
-        // Refresh переглядача
         public void Refresh()
         {
             if (!string.IsNullOrEmpty(CurrentPath) && Directory.Exists(CurrentPath))
@@ -68,13 +69,11 @@ namespace WindowsCostumizeWizard.MW_Element
             }
         }
 
-        // Очищення списку
         public void ClearItems()
         {
             _items.Clear();
         }
 
-        // Фільтр для пошуку
         private bool FilterItems(object obj)
         {
             ExplorerItem item = obj as ExplorerItem;
@@ -93,7 +92,6 @@ namespace WindowsCostumizeWizard.MW_Element
                 _collectionView.Refresh();
         }
 
-        // Викликається при зміні CurrentPath
         private static void OnPathChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             UC_UniversalExplorer explorer = d as UC_UniversalExplorer;
@@ -113,7 +111,6 @@ namespace WindowsCostumizeWizard.MW_Element
 
             try
             {
-                // Додати ".." для повернення на рівень вище
                 DirectoryInfo parent = Directory.GetParent(path);
                 if (parent != null)
                 {

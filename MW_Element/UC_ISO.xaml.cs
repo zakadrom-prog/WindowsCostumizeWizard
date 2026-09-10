@@ -3,7 +3,6 @@ using System;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Threading.Tasks;
@@ -69,10 +68,8 @@ namespace WindowsCostumizeWizard.MW_Element
         private async void Click_OpenISOFile(object sender, RoutedEventArgs e)
         {
             var mainWindow = Window.GetWindow(this);
-
             var owner = Window.GetWindow(this);
 
-            // 1. Демонтаж попереднього диска (якщо є)
             if (!string.IsNullOrEmpty(wcwAppState.MountedIsoPath))
             {
                 SetIsoUiStateA(false);
@@ -90,10 +87,9 @@ namespace WindowsCostumizeWizard.MW_Element
                 {
                     await Task.Run(() =>
                     {
-                        IsoMounter.Unmount(); // важка операція в фоні
+                        IsoMounter.Unmount();
                     });
 
-                    // Після завершення фонової роботи оновлюємо UI
                     Dispatcher.Invoke(() =>
                     {
                         ExplorerA.CurrentPath = null;
@@ -107,11 +103,9 @@ namespace WindowsCostumizeWizard.MW_Element
                 }
             }
 
-            // 2. Вибір ISO
             var dialog = new OpenFileDialog { Filter = "ISO (*.iso)|*.iso" };
             if (dialog.ShowDialog() != true) return;
 
-            // 3. Монтування нового ISO
             var blockMount = new WindowProgressBlock(Application.Current.Resources["Text_BlockMount"] as string)
             {
                 Owner = Window.GetWindow(this),
@@ -140,12 +134,11 @@ namespace WindowsCostumizeWizard.MW_Element
                     {
                         var infoWindow = new WindowMessageInfoError(Application.Current.Resources["Text_ErrorMountISO"] as string);
                         
-                        infoWindow.Owner = owner; // ВАЖЛИВО
+                        infoWindow.Owner = owner;
                         infoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
                         infoWindow.ShowDialog();
                         SetIsoUiStateA(false);
                     }
-                    // десь тут потрібен напевно(я не впевнений) якийсь return чи що воно там каже про ппродовження роботи програми?
                 });
             }
             finally
@@ -192,15 +185,11 @@ namespace WindowsCostumizeWizard.MW_Element
 
         public void UpdateOpenIsoButtonState()
         {
-            // Шлях до ExtractISO
             string extractPath = Path.Combine(wcwAppState.ExtractIsoPath);
 
-            // Чи є дані в папці
-            bool hasExtractIso =
-                Directory.Exists(extractPath) &&
+            bool hasExtractIso = Directory.Exists(extractPath) &&
                 Directory.EnumerateFileSystemEntries(extractPath).Any();
 
-            // Логіка кнопки: якщо папка порожня → можна відкривати ISO
             btnOpenIso.IsEnabled = !hasExtractIso;
         }
 
@@ -261,6 +250,7 @@ namespace WindowsCostumizeWizard.MW_Element
                 {
                     mw.UpdateCopyIsoButtonState();
                     mw.CheckStatusIsoState();
+                    mw.ActivateBTN_InfoWimEsd(true);
                 }
             }
         }
@@ -285,6 +275,7 @@ namespace WindowsCostumizeWizard.MW_Element
                 mw.UpdateCopyIsoButtonState();
                 mw.WD_UpdateButtonState();
                 mw.CheckStatusIsoState();
+                mw.ActivateBTN_InfoWimEsd(false);
             }
         }
 

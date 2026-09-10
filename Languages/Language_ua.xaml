@@ -55,7 +55,7 @@
     <!-- End -->
 
     <!-- MainWindow -->
-    <sys:String x:Key="AppTitle">Майстер кастомів Windows Бета</sys:String>
+    <sys:String x:Key="AppTitle">Майстер кастомів Windows</sys:String>
     <sys:String x:Key="SettingsTitle">Налаштування</sys:String>
     <!-- End -->
 
@@ -178,6 +178,7 @@
     <sys:String x:Key="Content_FeaturesButton0">♻️ Оновити</sys:String>
     <sys:String x:Key="Content_FeaturesButton1">✖ Вимкнути</sys:String>
     <sys:String x:Key="Content_FeaturesButton2">✔ Ввімкнути</sys:String>
+    <sys:String x:Key="Content_Sel">+ Вибрати</sys:String>
 
     <!-- Load Features -->
     <sys:String x:Key="Text_BlockLoadFeatures">ЗАВАНТАЖЕННЯ КОМПОНЕНТІВ...</sys:String>
@@ -193,6 +194,7 @@
     <sys:String x:Key="Text_ErrorLoadListFeatures">Помилка при отриманні списку компонентів.</sys:String>
     <sys:String x:Key="Text_ErrorLoadListTree">Помилка при завантаженні дерева.</sys:String>
     <sys:String x:Key="Text_RestartPC">ПОТРІБНО ПЕРЕЗАВАНТАЖИТИ ПК!</sys:String>
+    <sys:String x:Key="Text_OfflineFeatureUpdated">ОБРАЗ WINDOWS ОНОВЛЕНО!</sys:String>
     <sys:String x:Key="Content_ShowName">Показати повну назву</sys:String>
     <sys:String x:Key="Text_LoadErrorOnlinePackages">Помилка завантаження Локальних пакетів.</sys:String>
     <sys:String x:Key="Text_LoadErrorOnlineAppx">Помилка завантаження Локальних Appx.</sys:String>
@@ -264,7 +266,7 @@
 
     <!-- About -->
     <sys:String x:Key="Text_AboutProgram">
-        Майстер костюмів Windows Бета\n
+        Майстер костюмів Windows Бета верія\n
         \n
         Майстер костюмів Windows — це утиліта для роботи з образами Windows\n
         та обслуговування локального середовища операційної системи.\n
