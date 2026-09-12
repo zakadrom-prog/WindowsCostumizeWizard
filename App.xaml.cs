@@ -16,6 +16,8 @@ namespace WindowsCostumizeWizard
 
         public static AppConfig Config { get; private set; }
 
+        private ResourceDictionary RES => System.Windows.Application.Current.Resources;
+
         protected override void OnStartup(StartupEventArgs e)
         {
             _appMutex = new Mutex(false, "WindowsCostumizeWizard_Main");
@@ -91,9 +93,19 @@ namespace WindowsCostumizeWizard
             ApplyLanguage(Config.Language);
             ApplyTheme(Config.Theme);
 
+            // Перевіряємо, чи запущена програма оновлення
+            if (IsWcwUpdateRunning())
+            {
+                MessageBox.Show(RES["Text_UpdateProgramRunning"] as string, RES["Text_WcwUpdate"] as string,
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+
+                Shutdown();
+                return;
+            }
+
             // ===== Перевірка робочої директорії =====
-            bool needSelectFolder =
-                string.IsNullOrEmpty(Config.WorkDirectory) || !Directory.Exists(Config.WorkDirectory);
+            bool needSelectFolder = string.IsNullOrEmpty(Config.WorkDirectory) || !Directory.Exists(Config.WorkDirectory);
 
             if (needSelectFolder)
             {
@@ -153,13 +165,11 @@ namespace WindowsCostumizeWizard
         {
             string baseDir = AppDomain.CurrentDomain.BaseDirectory;
 
-            ExtractResourceIfMissing(
-                "WindowsCostumizeWizard.Resources.features.json",
-                Path.Combine(baseDir, "features.json"));
+            ExtractResourceIfMissing("WindowsCostumizeWizard.Resources.features.json", Path.Combine(baseDir, "features.json"));
 
-            ExtractResourceIfMissing(
-                "WindowsCostumizeWizard.Resources.MountValidation.exe",
-                Path.Combine(baseDir, "MountValidation.exe"));
+            ExtractResourceIfMissing("WindowsCostumizeWizard.Resources.MountValidation.exe", Path.Combine(baseDir, "MountValidation.exe"));
+
+            ExtractResourceIfMissing("WindowsCostumizeWizard.Resources.wcw_update.exe", Path.Combine(baseDir, "wcw_update.exe"));
         }
 
         private void ExtractResourceIfMissing(string resourceName, string outputPath)
@@ -310,6 +320,36 @@ namespace WindowsCostumizeWizard
 
             ApplyLanguage(lang);
             ApplyTheme(theme);
+        }
+
+        private bool IsWcwUpdateRunning()
+        {
+            try
+            {
+                using (Mutex mutex = Mutex.OpenExisting("wcwUpdate_Main"))
+                {
+                    return true;
+                }
+            }
+            catch (WaitHandleCannotBeOpenedException)
+            {
+                return false;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return true;
+            }
+        }
+
+        protected override void OnExit(ExitEventArgs e)
+        {
+            if (_appMutex != null)
+            {
+                _appMutex.Dispose();
+                _appMutex = null;
+            }
+
+            base.OnExit(e);
         }
     }
 }

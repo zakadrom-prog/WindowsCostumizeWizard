@@ -2,9 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <!-- App C# -->
+    <sys:String x:Key="Text_UpdateProgramRunning">wcw_update is running; you must complete the update or close the program.</sys:String>
+    <sys:String x:Key="Text_WcwUpdate">Warning</sys:String>
+    <!-- End -->
+    
     <!-- Start MainWindow -->
     <sys:String x:Key="Link_SiteProject">Project Page</sys:String>
-    <sys:String x:Key="Link_UpdateProgram">Update Program</sys:String>
+    <sys:String x:Key="Link_UpdateProgram">Download package</sys:String>
     <sys:String x:Key="Content_UpdateOpenInfo">Update</sys:String>
     <sys:String x:Key="Content_UpdateInfoClose">Close</sys:String>
     <sys:String x:Key="Text_UpdateShow">Don't show anymore</sys:String>
@@ -35,7 +40,7 @@
     <sys:String x:Key="Text_Help">Help text</sys:String>
 
     <sys:String x:Key="Text_Version">Version program:</sys:String>
-    <sys:String x:Key="Text_UpdateStatus">Automatically update the application</sys:String>
+    <sys:String x:Key="Text_UpdateStatus">Check for updates program</sys:String>
     <sys:String x:Key="Content_btnOn">✔ On</sys:String>
     <sys:String x:Key="Content_btnOff">❌ Off</sys:String>
     <!-- End -->
@@ -262,6 +267,15 @@
     <!-- END -->
 
     <!-- About -->
+    <sys:String x:Key="Text_YesU">Yes</sys:String>
+    <sys:String x:Key="Text_NoU">No</sys:String>
+    <sys:String x:Key="txt_NoCheckUpdate">Update check disabled</sys:String>
+
+    <sys:String x:Key="Text_WarningMessage">Warning</sys:String>
+    <sys:String x:Key="Text_NoExeWcw">"wcw_update.exe not found"</sys:String>
+    <sys:String x:Key="Text_NoStartUpdate">Failed to start the update</sys:String>
+    <sys:String x:Key="Text_WarningMessageStartUpdate">The main application will be completely closed to start the update.</sys:String>
+
     <sys:String x:Key="Text_AboutProgram">
         Windows Customize Wizard Beta version\n
         \n

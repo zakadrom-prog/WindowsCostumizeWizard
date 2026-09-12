@@ -2,9 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <!-- App C# -->
+    <sys:String x:Key="Text_UpdateProgramRunning">Запущена wcw_update потрібно завершити оновлення або закрити програму.</sys:String>
+    <sys:String x:Key="Text_WcwUpdate">Попередження</sys:String>
+    <!-- End -->
+
     <!-- Start MainWindow -->
     <sys:String x:Key="Link_SiteProject">Сторінка проекту</sys:String>
-    <sys:String x:Key="Link_UpdateProgram">Оновити програму</sys:String>
+    <sys:String x:Key="Link_UpdateProgram">Завантажити пакет</sys:String>
     <sys:String x:Key="Text_YesIUP">Доступна нова версія</sys:String>
     <sys:String x:Key="Text_NoIUP">Оновлення не потрібне</sys:String>
     <sys:String x:Key="txt_NewUpdate">Доступне оновлення. Версія:</sys:String>
@@ -36,7 +41,7 @@
     <sys:String x:Key="Text_Help">Текст довідки</sys:String>
 
     <sys:String x:Key="Text_Version">Версія програми:</sys:String>
-    <sys:String x:Key="Text_UpdateStatus">Автоматичне оновлення програми</sys:String>
+    <sys:String x:Key="Text_UpdateStatus">Перевіряти оновлення програми</sys:String>
     <sys:String x:Key="Content_btnOn">✔ Увімкнуто</sys:String>
     <sys:String x:Key="Content_btnOff">❌ Вимкнуто</sys:String>
 
@@ -265,6 +270,16 @@
     <!-- END -->
 
     <!-- About -->
+    <sys:String x:Key="Text_YesU">Так</sys:String>
+    <sys:String x:Key="Text_NoU">Ні</sys:String>
+    <sys:String x:Key="txt_NoCheckUpdate">Перевірку оновлення вимкнуто</sys:String>
+
+    <sys:String x:Key="Text_WarningMessage">Попередження</sys:String>
+    <sys:String x:Key="Text_NoExeWcw">"wcw_update.exe не знайдено"</sys:String>
+    <sys:String x:Key="Text_NoStartUpdate">Не вдалося запустити оновлення</sys:String>
+    <sys:String x:Key="Text_WarningMessageStartUpdate">Для запуску оновлення основну програму буде повністю закрито.</sys:String>
+
+
     <sys:String x:Key="Text_AboutProgram">
         Майстер костюмів Windows Бета верія\n
         \n

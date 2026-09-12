@@ -90,7 +90,8 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
@@ -98,16 +99,24 @@
                                VerticalAlignment="Center"
                                Foreground="{DynamicResource GlobalTitleForeground1}"/>
 
-                    <Button x:Name="btnEnableUpdates"
-                            Style="{DynamicResource GlobalActionButtonStyle}"
-                            Content="{DynamicResource Content_btnOn}"
-                            Margin="5,0" Grid.Column="1"
-                            Click="EnableUpdates_Click"/>
+                    <RadioButton x:Name="rbEnableUpdate"
+                                 Content="{DynamicResource Text_YesU}"
+                                 VerticalAlignment="Center"
+                                 Foreground="{DynamicResource GlobalTitleForeground1}"
+                                 Margin="5,0" Grid.Column="1"
+                                 Click="EnableUpdates_Click"/>
+                    
+                    <RadioButton x:Name="rbDisableUpdate"
+                                 Content="{DynamicResource Text_NoU}"
+                                 VerticalAlignment="Center"
+                                 Foreground="{DynamicResource GlobalTitleForeground1}"
+                                 Margin="0,0,5,0" Grid.Column="2"
+                                 Click="DisableUpdates_Click"/>
 
                     <Button x:Name="btnDisableUpdates" Style="{DynamicResource GlobalActionButtonStyle}"
-                            Content="{DynamicResource Content_btnOff}"                       
-                            Grid.Column="2"
-                            Click="DisableUpdates_Click"/>
+                            Content="{DynamicResource Content_PA_Button0}"                       
+                            Grid.Column="3"
+                            Click="OpenUpdate_Click"/>
                 </Grid>
             </Border>
 
@@ -150,7 +159,7 @@
             <Button Style="{DynamicResource GlobalActionButtonStyle}"
                     Content="{DynamicResource Content_CloseWindow}"
                     Margin="0,5,0,0" Width="Auto"
-                        Click="CloseWindowAbout_Click"/>
+                    Click="CloseWindowAbout_Click"/>
         </StackPanel>
     </Border>
 </Window>

@@ -413,5 +413,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Resources\MountValidation.exe" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\wcw_update.exe" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
