@@ -8,7 +8,7 @@ namespace WindowsCostumizeWizard
 {
     public class UpdateChecker
     {
-        private const string UpdateUrl = "https://github.com/zakadrom-prog/WindowsCostumizeWizard/releases/download/v1.0.0.0/update.json";
+        private const string UpdateUrl = "https://raw.githubusercontent.com/zakadrom-prog/WindowsCostumizeWizard/main/update.json";
 
         public void CheckUpdates()
         {

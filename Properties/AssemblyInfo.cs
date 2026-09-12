@@ -19,5 +19,5 @@ using System.Windows;
 )]
 
 [assembly: Guid("130DB2DC-7EA5-4812-B8E6-3ACD15564F4B")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.1.0")]
+[assembly: AssemblyFileVersion("1.0.1.0")]
